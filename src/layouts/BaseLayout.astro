@@ -1,5 +1,4 @@
 ---
-const { frontmatter } = Astro.props
 import '@/styles/base.css'
 ---
 
@@ -9,11 +8,9 @@ import '@/styles/base.css'
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>{frontmatter.title}</title>
+    <title>Astro</title>
   </head>
   <body>
-    <article class='prose mx-auto'>
-      <slot />
-    </article>
+    <slot />
   </body>
 </html>

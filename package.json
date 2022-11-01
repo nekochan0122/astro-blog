@@ -18,15 +18,21 @@
     "@astrojs/tailwind": "^2.1.1",
     "@tailwindcss/typography": "^0.5.7",
     "astro": "^1.6.2",
+    "astro-compress": "^1.1.1",
     "astro-m2dx": "0.7.6",
     "clsx": "^1.2.1",
+    "rehype-twemojify": "^3.1.0",
     "remark-toc": "^8.0.1",
     "solid-js": "^1.6.1",
     "tailwind-merge": "^1.7.0",
     "tailwindcss": "^3.2.1"
   },
   "devDependencies": {
+    "emoji-regex": "^10.2.1",
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13"
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "string-replace-to-array": "^2.1.0",
+    "twemoji": "^14.0.2",
+    "unist-util-map": "^3.1.2"
   }
 }
