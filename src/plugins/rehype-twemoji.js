@@ -68,6 +68,7 @@ function makeTransformer(options) {
                   draggable: 'false',
                   alt: segment.emoji,
                   decoding: 'async',
+                  loading: 'lazy',
                   src: toUrl(segment.emoji, options),
                 },
                 children: [],

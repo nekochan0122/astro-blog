@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "types": ["@astrojs/image/client"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
