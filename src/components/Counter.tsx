@@ -5,7 +5,7 @@ interface Props {
   children?: JSX.Element
 }
 
-export default function Counter(props: Props) {
+export function Counter(props: Props) {
   const [count, setCount] = createSignal(0)
   const add = () => setCount((i) => i + 1)
   const subtract = () => setCount((i) => i - 1)
@@ -21,3 +21,5 @@ export default function Counter(props: Props) {
     </>
   )
 }
+
+export default Counter

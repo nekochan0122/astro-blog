@@ -18,8 +18,9 @@
     "@astrojs/tailwind": "^2.1.1",
     "@tailwindcss/typography": "^0.5.7",
     "astro": "^1.6.2",
-    "astro-m2dx": "0.7.5",
+    "astro-m2dx": "0.7.6",
     "clsx": "^1.2.1",
+    "remark-toc": "^8.0.1",
     "solid-js": "^1.6.1",
     "tailwind-merge": "^1.7.0",
     "tailwindcss": "^3.2.1"
