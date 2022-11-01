@@ -1,0 +1,28 @@
+---
+const posts = await Astro.glob('./post/*.mdx')
+const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1 class='text-6xl text-orange-400'>Astro</h1>
+    <ul>
+      {
+        nonDraftPosts.map((post) => (
+          <li>
+            <a href={`/post/${post.frontmatter.slug ?? post.file.split('/').pop()?.split('.').shift()}`}>
+              {post.frontmatter.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>
