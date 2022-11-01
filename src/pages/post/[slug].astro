@@ -5,7 +5,7 @@ export async function getStaticPaths() {
 
   return nonDraftPosts.map((post) => ({
     params: {
-      slug: post.frontmatter.slug ?? post.file.split('/').pop()?.split('.').shift(),
+      slug: post.frontmatter.slug ?? post.file.match(/([^\/]+)(?=\.\w+$)/)![0],
     },
     props: {
       post,

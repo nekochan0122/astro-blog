@@ -11,7 +11,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
     {
       nonDraftPosts.map((post) => (
         <li>
-          <a href={`/post/${post.frontmatter.slug ?? post.file.split('/').pop()?.split('.').shift()}`}>
+          <a href={`/post/${post.frontmatter.slug ?? post.file.match(/([^\/]+)(?=\.\w+$)/)![0]}`}>
             {post.frontmatter.title}
           </a>
         </li>
