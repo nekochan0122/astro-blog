@@ -4,6 +4,6 @@
 
 @layer base {
   html {
-    @apply scroll-smooth antialiased;
+    @apply scroll-smooth font-serif antialiased;
   }
 }
