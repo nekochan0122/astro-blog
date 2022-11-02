@@ -1,5 +1,5 @@
 ---
-import '@fontsource/roboto'
+import '@fontsource/inter'
 import '@fontsource/fira-code'
 import type { MarkdownLayoutProps } from 'astro'
 
@@ -19,9 +19,21 @@ const { frontmatter } = Astro.props
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{frontmatter.title}</title>
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme')
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      })()
+
+      document.documentElement.setAttribute('style', `color-scheme: ${theme};`)
+      document.documentElement.setAttribute('data-theme', theme)
+      window.localStorage.setItem('theme', theme)
+    </script>
   </head>
   <body>
-    <article class='prose lg:prose-xl prose-img:rounded-md mx-auto'>
+    <article class='prose lg:prose-xl prose-img:rounded-md mx-auto dark:prose-invert'>
       <slot />
     </article>
   </body>

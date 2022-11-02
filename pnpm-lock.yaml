@@ -6,7 +6,7 @@ specifiers:
   '@astrojs/solid-js': ^1.2.2
   '@astrojs/tailwind': ^2.1.1
   '@fontsource/fira-code': ^4.5.12
-  '@fontsource/roboto': ^4.5.8
+  '@fontsource/inter': ^4.5.14
   '@tailwindcss/typography': ^0.5.7
   astro: ^1.6.2
   astro-compress: ^1.1.1
@@ -31,7 +31,7 @@ dependencies:
   '@astrojs/solid-js': 1.2.2_solid-js@1.6.1
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
   '@fontsource/fira-code': 4.5.12
-  '@fontsource/roboto': 4.5.8
+  '@fontsource/inter': 4.5.14
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   astro: 1.6.2
   astro-compress: 1.1.1
@@ -527,8 +527,8 @@ packages:
     resolution: {integrity: sha512-dAVGsgiVR6jslpuXosHH4/Jf8bsAIKL1RWqjVq4WpmxL7CFHfg9hT5bAv/Y3xsEj8kDTibEgpuC3eMfr9kb02g==}
     dev: false
 
-  /@fontsource/roboto/4.5.8:
-    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
+  /@fontsource/inter/4.5.14:
+    resolution: {integrity: sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==}
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:

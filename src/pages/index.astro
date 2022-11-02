@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 
-const posts = await Astro.glob('../posts/*.mdx')
+const posts = await Astro.glob('./post/*.mdx')
 const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
 ---
 
