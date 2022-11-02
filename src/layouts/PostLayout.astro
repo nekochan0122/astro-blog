@@ -1,15 +1,18 @@
 ---
 import '@fontsource/inter'
 import '@fontsource/fira-code'
-import { Image } from '@astrojs/image/components'
+import dayjs from 'dayjs'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
 import Nav from '@/components/Nav.astro'
-import avatar from '@/images/81856932_p0_400x400.jpg'
 import type { MarkdownLayoutProps } from 'astro'
+
+dayjs.extend(localizedFormat)
 
 type Props = MarkdownLayoutProps<{
   title: string
   description: string
   date: string
+  minutesRead: string
 }>
 
 const { frontmatter } = Astro.props
@@ -41,10 +44,9 @@ const { frontmatter } = Astro.props
       <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{frontmatter.title}</h1>
       <div class='flex flex-col items-start justify-between w-full mb-4 md:flex-row md:items-center'>
         <div class='flex items-center'>
-          <Image src={avatar} alt='NekoChan' class='w-6 h-6 rounded-full' />
-          <p class='ml-2 text-sm text-gray-700 dark:text-gray-300'>NekoChan / August 07, 2019</p>
+          <p class='text-sm text-gray-700 dark:text-gray-300'>NekoChan / {dayjs(frontmatter.date).format('LL')}</p>
         </div>
-        <p class='text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0'>12 min read</p>
+        <p class='text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0'>{frontmatter.minutesRead}</p>
       </div>
       <article class='prose lg:prose-xl prose-img:rounded-md mx-auto dark:prose-invert max-w-none w-full'>
         <slot />
