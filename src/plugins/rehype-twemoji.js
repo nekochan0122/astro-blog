@@ -10,7 +10,8 @@ const defaultTwemojiOptions = {
 
 const defaultOptions = {
   exclude: [],
-  className: 'm-0 inline-block h-8 w-8',
+  containerClassName: 'not-prose align-text-bottom',
+  className: 'inline-block h-6 w-6',
   twemoji: defaultTwemojiOptions,
 }
 
@@ -64,7 +65,7 @@ function makeTransformer(options) {
                 type: 'element',
                 tagName: 'i',
                 properties: {
-                  className: 'emoji not-prose',
+                  className: [options.containerClassName],
                 },
                 children: [
                   {
