@@ -1,6 +1,7 @@
 ---
 import '@fontsource/inter'
 import '@fontsource/fira-code'
+import Nav from '@/components/Nav.astro'
 ---
 
 <html lang='en' class='scroll-smooth font-serif antialiased'>
@@ -23,7 +24,10 @@ import '@fontsource/fira-code'
       window.localStorage.setItem('theme', theme)
     </script>
   </head>
-  <body>
-    <slot />
+  <body class='px-8'>
+    <Nav />
+    <main class='max-w-2xl mx-auto'>
+      <slot />
+    </main>
   </body>
 </html>

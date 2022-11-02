@@ -1,21 +1,35 @@
 ---
+import { Image } from '@astrojs/image/components'
 import BaseLayout from '@/layouts/BaseLayout.astro'
+import avatar from '@/images/81856932_p0_400x400.jpg'
 
 const posts = await Astro.glob('./post/*.mdx')
 const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
 ---
 
 <BaseLayout>
-  <h1 class='text-6xl text-orange-400'>Astro Blog</h1>
-  <ul>
-    {
-      nonDraftPosts.map((post) => (
-        <li>
-          <a href={`/post/${post.frontmatter.slug ?? post.file.match(/([^\/]+)(?=\.\w+$)/)![0]}`}>
-            {post.frontmatter.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <div class='flex justify-between mb-16'>
+    <div class='flex flex-col pr-8'>
+      <h1 class='font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white'>NekoChan</h1>
+      <h2 class='text-gray-700 dark:text-gray-200 mb-4'>Full Stack Web Developer</h2>
+      <p class='text-gray-600 dark:text-gray-400'>
+        Enjoy coding and learning new things.<br />
+        Making web applications with Next.js / Astro.<br />
+      </p>
+    </div>
+    <div class='w-20 sm:w-32 relative'>
+      <Image src={avatar} alt='avatar' class='rounded-full' draggable={false} />
+    </div>
+  </div>
+  {
+    nonDraftPosts.map((post) => (
+      <a
+        href={`/post/${post.frontmatter.slug ?? post.file.match(/([^\/]+)(?=\.\w+$)/)![0]}`}
+        class='block box-border mb-8 p-4 rounded-lg transition-colors hover:bg-gray-200 dark:hover:bg-gray-800'
+      >
+        <h4 class='mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100'>{post.frontmatter.title}</h4>
+        <p class='text-gray-600 dark:text-gray-400'>{post.frontmatter.description}</p>
+      </a>
+    ))
+  }
 </BaseLayout>
