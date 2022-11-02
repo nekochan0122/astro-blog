@@ -20,7 +20,7 @@ const m2dxOptions = {
   frontmatter: true,
   exportComponents: true,
   autoImports: false,
-  relativeImages: false,
+  relativeImages: true,
 }
 
 /** @type {import('@astrojs/mdx').MdxOptions} */

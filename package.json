@@ -22,7 +22,7 @@
     "@tailwindcss/typography": "^0.5.7",
     "astro": "^1.6.2",
     "astro-compress": "^1.1.1",
-    "astro-m2dx": "0.7.6",
+    "astro-m2dx": "0.7.7",
     "clsx": "^1.2.1",
     "rehype-twemojify": "^3.1.0",
     "remark-toc": "^8.0.1",

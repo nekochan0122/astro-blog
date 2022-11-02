@@ -1,5 +1,1 @@
-import { Counter } from './components/Counter'
-
-export const autoimports = {
-  Counter,
-}
+export const autoimports = {}

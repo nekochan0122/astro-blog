@@ -69,6 +69,8 @@ function makeTransformer(options) {
                   alt: segment.emoji,
                   decoding: 'async',
                   loading: 'lazy',
+                  width: '72',
+                  height: '72',
                   src: toUrl(segment.emoji, options),
                 },
                 children: [],
