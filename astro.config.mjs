@@ -8,12 +8,6 @@ import m2dx from 'astro-m2dx'
 import remarkToc from 'remark-toc'
 import rehypeTwemoji from './src/plugins/rehype-twemoji'
 
-const tailwindOptions = {
-  config: {
-    applyBaseStyles: false,
-  },
-}
-
 // https://astro-m2dx.netlify.app/
 /** @type {import('astro-m2dx').Options} */
 const m2dxOptions = {
@@ -38,7 +32,7 @@ const imageOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(tailwindOptions), solidJs(), mdx(mdxOptions), image(imageOptions), compress()],
+  integrations: [tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress()],
   markdown: {
     drafts: true,
     syntaxHighlight: 'shiki',

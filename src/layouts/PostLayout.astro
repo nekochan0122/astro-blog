@@ -1,12 +1,18 @@
 ---
-import '@/styles/base.css'
 import '@fontsource/roboto'
 import '@fontsource/fira-code'
+import type { MarkdownLayoutProps } from 'astro'
+
+type Props = MarkdownLayoutProps<{
+  title: string
+  description: string
+  date: string
+}>
 
 const { frontmatter } = Astro.props
 ---
 
-<html lang='en'>
+<html lang='en' class='scroll-smooth font-serif antialiased'>
   <head>
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -15,7 +21,7 @@ const { frontmatter } = Astro.props
     <title>{frontmatter.title}</title>
   </head>
   <body>
-    <article class='prose prose-img:rounded-md mx-auto'>
+    <article class='prose lg:prose-xl prose-img:rounded-md mx-auto'>
       <slot />
     </article>
   </body>

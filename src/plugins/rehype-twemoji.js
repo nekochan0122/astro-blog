@@ -10,7 +10,7 @@ const defaultTwemojiOptions = {
 
 const defaultOptions = {
   exclude: [],
-  className: 'emoji m-0 inline-block h-8 w-8',
+  className: 'm-0 inline-block h-8 w-8',
   twemoji: defaultTwemojiOptions,
 }
 
@@ -62,18 +62,27 @@ function makeTransformer(options) {
               }
             : {
                 type: 'element',
-                tagName: 'img',
+                tagName: 'i',
                 properties: {
-                  className: [options.className],
-                  draggable: 'false',
-                  alt: segment.emoji,
-                  decoding: 'async',
-                  loading: 'lazy',
-                  width: '72',
-                  height: '72',
-                  src: toUrl(segment.emoji, options),
+                  className: 'emoji not-prose',
                 },
-                children: [],
+                children: [
+                  {
+                    type: 'element',
+                    tagName: 'img',
+                    properties: {
+                      className: [options.className],
+                      draggable: 'false',
+                      alt: segment.emoji,
+                      decoding: 'async',
+                      loading: 'lazy',
+                      width: '72',
+                      height: '72',
+                      src: toUrl(segment.emoji, options),
+                    },
+                    children: [],
+                  },
+                ],
               }
         )
 
