@@ -8,7 +8,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
 ---
 
 <BaseLayout>
-  <div class='flex justify-between mb-16'>
+  <div class='flex flex-col-reverse sm:flex-row sm:justify-between mb-16'>
     <div class='flex flex-col pr-8'>
       <h1 class='font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white'>NekoChan</h1>
       <h2 class='text-gray-700 dark:text-gray-200 mb-4'>Full Stack Web Developer</h2>
@@ -17,7 +17,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
         Making web applications with Next.js / Astro.<br />
       </p>
     </div>
-    <div class='w-20 sm:w-32 relative'>
+    <div class='w-20 sm:w-32 relative mb-8 sm:mb-0'>
       <Image src={avatar} alt='avatar' class='rounded-full' draggable={false} />
     </div>
   </div>
