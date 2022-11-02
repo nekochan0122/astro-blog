@@ -1,4 +1,6 @@
 ---
+import { cx } from '@/lib/utils'
+
 const items = [{ name: 'Home', url: '/' }]
 ---
 
@@ -9,7 +11,10 @@ const items = [{ name: 'Home', url: '/' }]
     {
       items.map(({ name, url }) => (
         <a
-          class='text-gray-600 dark:text-gray-400 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors'
+          class={cx(
+            'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors',
+            Astro.url.pathname === url ? 'text-gray-800 dark:text-gray-200' : 'text-gray-600 dark:text-gray-400'
+          )}
           href={url}
         >
           {name}
