@@ -23,7 +23,7 @@ const { frontmatter } = Astro.props
     <BaseHead title={frontmatter.title} description={frontmatter.description} />
   </head>
   <body
-    class='px-8 [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-colors duration-300'
+    class='px-8 [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-[background-color] duration-300'
   >
     <Nav />
     <main class='max-w-2xl mx-auto'>
