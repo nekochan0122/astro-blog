@@ -14,7 +14,7 @@ import rehypeTwemoji from './src/plugins/rehype-twemoji'
 const m2dxOptions = {
   frontmatter: true,
   exportComponents: true,
-  autoImports: false,
+  autoImports: true,
   relativeImages: true,
 }
 
