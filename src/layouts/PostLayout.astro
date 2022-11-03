@@ -1,10 +1,6 @@
 ---
-import dayjs from 'dayjs'
-import localizedFormat from 'dayjs/plugin/localizedFormat'
 import BaseLayout from './BaseLayout.astro'
 import type { MarkdownLayoutProps } from 'astro'
-
-dayjs.extend(localizedFormat)
 
 type Props = MarkdownLayoutProps<{
   title: string
@@ -22,7 +18,10 @@ const { frontmatter } = Astro.props
   <div class='flex flex-col items-start justify-between w-full mb-4 md:flex-row md:items-center'>
     <div class='flex items-center'>
       <p class='text-sm text-gray-700 dark:text-gray-300'>
-        {frontmatter.author} / {dayjs(frontmatter.date).format('LL')}
+        <span>{frontmatter.author} /</span>
+        <time datetime={new Date(frontmatter.date).toISOString()}>
+          {new Date(frontmatter.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </time>
       </p>
     </div>
     <p class='text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0'>{frontmatter.minutesRead}</p>
