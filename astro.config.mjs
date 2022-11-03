@@ -31,9 +31,16 @@ const imageOptions = {
   serviceEntryPoint: '@astrojs/image/sharp',
 }
 
+/** @type {import('astro-compress/dist/options').Options} */
+const compressOptions = {
+  img: {
+    webp: false,
+  },
+}
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress()],
+  integrations: [tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress(compressOptions)],
   markdown: {
     drafts: true,
     syntaxHighlight: 'shiki',
