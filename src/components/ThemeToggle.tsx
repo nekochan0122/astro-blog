@@ -7,7 +7,7 @@ enum Theme {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = createSignal(localStorage.getItem('theme') ?? 'light')
+  const [theme, setTheme] = createSignal(localStorage.getItem(Theme.KeyName) ?? Theme.Light)
   const [mounted, setMounted] = createSignal(false)
 
   const handleClick = () => {
