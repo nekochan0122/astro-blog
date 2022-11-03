@@ -39,7 +39,9 @@ const { frontmatter } = Astro.props
       window.localStorage.setItem('theme', theme)
     </script>
   </head>
-  <body class='px-8 [overflow:overlay]'>
+  <body
+    class='px-8 [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-colors duration-300'
+  >
     <Nav />
     <main class='max-w-2xl mx-auto'>
       <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{frontmatter.title}</h1>
