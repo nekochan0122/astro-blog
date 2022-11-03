@@ -1,8 +1,7 @@
 ---
 import dayjs from 'dayjs'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
-import BaseHead from '@/components/BaseHead.astro'
-import Nav from '@/components/Nav.astro'
+import BaseLayout from './BaseLayout.astro'
 import type { MarkdownLayoutProps } from 'astro'
 
 dayjs.extend(localizedFormat)
@@ -18,27 +17,17 @@ type Props = MarkdownLayoutProps<{
 const { frontmatter } = Astro.props
 ---
 
-<html lang='en' class='scroll-smooth font-serif antialiased'>
-  <head>
-    <BaseHead title={frontmatter.title} description={frontmatter.description} />
-  </head>
-  <body
-    class='px-8 [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-[background-color] duration-300'
-  >
-    <Nav />
-    <main class='max-w-2xl mx-auto'>
-      <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{frontmatter.title}</h1>
-      <div class='flex flex-col items-start justify-between w-full mb-4 md:flex-row md:items-center'>
-        <div class='flex items-center'>
-          <p class='text-sm text-gray-700 dark:text-gray-300'>
-            {frontmatter.author} / {dayjs(frontmatter.date).format('LL')}
-          </p>
-        </div>
-        <p class='text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0'>{frontmatter.minutesRead}</p>
-      </div>
-      <article class='prose lg:prose-xl prose-img:rounded-md mx-auto dark:prose-invert max-w-none w-full'>
-        <slot />
-      </article>
-    </main>
-  </body>
-</html>
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{frontmatter.title}</h1>
+  <div class='flex flex-col items-start justify-between w-full mb-4 md:flex-row md:items-center'>
+    <div class='flex items-center'>
+      <p class='text-sm text-gray-700 dark:text-gray-300'>
+        {frontmatter.author} / {dayjs(frontmatter.date).format('LL')}
+      </p>
+    </div>
+    <p class='text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0'>{frontmatter.minutesRead}</p>
+  </div>
+  <article class='prose lg:prose-xl prose-img:rounded-md mx-auto dark:prose-invert max-w-none w-full'>
+    <slot />
+  </article>
+</BaseLayout>
