@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const { fontFamily, spacing } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -6,8 +6,8 @@ module.exports = {
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     fontFamily: {
-      serif: ['Inter', ...defaultTheme.fontFamily.sans],
-      mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+      serif: ['Inter', ...fontFamily.sans],
+      mono: ['Fira Code', ...fontFamily.mono],
     },
     extend: {
       colors: {
@@ -24,6 +24,28 @@ module.exports = {
           900: '#111111',
         },
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.blue.500'),
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
+              code: { color: theme('colors.blue.400') },
+            },
+            'h2,h3,h4': {
+              'scroll-margin-top': spacing[32],
+            },
+            thead: {
+              borderBottomColor: theme('colors.gray.200'),
+            },
+            code: { color: theme('colors.pink.500') },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
+          },
+        },
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],
