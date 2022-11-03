@@ -15,7 +15,7 @@ export default function ThemeToggle() {
   }
 
   createEffect(() => {
-    if (!mounted()) return
+    if (document.documentElement.getAttribute('data-theme') === theme()) return
     document.documentElement.setAttribute('style', `color-scheme: ${theme()};`)
     document.documentElement.setAttribute('data-theme', theme())
     localStorage.setItem(Theme.KeyName, theme())
