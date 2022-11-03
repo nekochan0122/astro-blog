@@ -22,7 +22,6 @@ const m2dxOptions = {
 const mdxOptions = {
   remarkPlugins: [[m2dx, m2dxOptions], remarkToc, remarkReadingTime],
   rehypePlugins: [rehypeTwemoji],
-  recmaPlugins: [],
   extendPlugins: 'astroDefaults', // remark-gfm, remark-smartypants
 }
 

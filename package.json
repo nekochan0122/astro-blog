@@ -13,14 +13,14 @@
     "update": "pnpm up --latest"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.0",
+    "@astrojs/image": "^0.11.1",
     "@astrojs/mdx": "^0.11.5",
     "@astrojs/solid-js": "^1.2.2",
-    "@astrojs/tailwind": "^2.1.1",
+    "@astrojs/tailwind": "^2.1.2",
     "@fontsource/fira-code": "^4.5.12",
     "@fontsource/inter": "^4.5.14",
     "@tailwindcss/typography": "^0.5.7",
-    "astro": "^1.6.2",
+    "astro": "^1.6.3",
     "astro-compress": "^1.1.1",
     "astro-m2dx": "0.7.7",
     "clsx": "^1.2.1",
