@@ -1,7 +1,4 @@
 ---
-import '@fontsource/inter'
-import '@fontsource/fira-code'
-
 interface Props {
   title: string
   description: string
@@ -32,6 +29,11 @@ const { title, description } = Astro.props
 <meta property='twitter:url' content={Astro.url} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
+
+<!-- Google Fonts -->
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link href={'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&display=swap'} rel='stylesheet' />
 
 <script is:inline>
   const theme = (() => {
