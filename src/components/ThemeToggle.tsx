@@ -7,7 +7,7 @@ enum Theme {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = createSignal(Theme.Light)
+  const [theme, setTheme] = createSignal(localStorage.getItem('theme') ?? 'light')
   const [mounted, setMounted] = createSignal(false)
 
   const handleClick = () => {
@@ -15,15 +15,13 @@ export default function ThemeToggle() {
   }
 
   createEffect(() => {
+    if (!mounted()) return
     document.documentElement.setAttribute('style', `color-scheme: ${theme()};`)
     document.documentElement.setAttribute('data-theme', theme())
     localStorage.setItem(Theme.KeyName, theme())
   })
 
-  onMount(() => {
-    console.log('@')
-    setMounted(true)
-  })
+  onMount(() => setMounted(true))
 
   return <button onClick={handleClick}>{mounted() ? (theme() === Theme.Light ? '🌞' : '🌙') : ''}</button>
 }
