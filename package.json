@@ -29,7 +29,7 @@
     "reading-time": "^1.5.0",
     "rehype-twemojify": "^3.1.0",
     "remark-toc": "^8.0.1",
-    "sharp": "^0.31.1",
+    "sharp": "^0.31.2",
     "solid-js": "^1.6.1",
     "string-replace-to-array": "^2.1.0",
     "tailwind-merge": "^1.7.0",

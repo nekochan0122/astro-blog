@@ -1,5 +1,4 @@
 import { createSignal } from 'solid-js'
-import { cx } from '@/lib/utils'
 
 export function Counter() {
   const [count, setCount] = createSignal(0)
@@ -7,7 +6,7 @@ export function Counter() {
   const subtract = () => setCount((i) => i - 1)
 
   return (
-    <div class={cx('flex', 'gap-x-4')}>
+    <div class='flex gap-x-4'>
       <button onClick={subtract}>-</button>
       <p>{count()}</p>
       <button onClick={add}>+</button>

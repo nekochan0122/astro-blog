@@ -19,7 +19,7 @@ specifiers:
   reading-time: ^1.5.0
   rehype-twemojify: ^3.1.0
   remark-toc: ^8.0.1
-  sharp: ^0.31.1
+  sharp: ^0.31.2
   solid-js: ^1.6.1
   string-replace-to-array: ^2.1.0
   tailwind-merge: ^1.7.0
@@ -28,7 +28,7 @@ specifiers:
   unist-util-map: ^3.1.2
 
 dependencies:
-  '@astrojs/image': 0.11.1_sharp@0.31.1
+  '@astrojs/image': 0.11.1_sharp@0.31.2
   '@astrojs/mdx': 0.11.5
   '@astrojs/solid-js': 1.2.2_solid-js@1.6.1
   '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.1
@@ -44,7 +44,7 @@ dependencies:
   reading-time: 1.5.0
   rehype-twemojify: 3.1.0
   remark-toc: 8.0.1
-  sharp: 0.31.1
+  sharp: 0.31.2
   solid-js: 1.6.1
   string-replace-to-array: 2.1.0
   tailwind-merge: 1.7.0
@@ -78,7 +78,7 @@ packages:
     resolution: {integrity: sha512-/oMQ0z3CJzGg6sv51tQTiHf/ETVsEu8ObN9OA7zs937dQx9Uo4SToYfdw3C4hf6olrLiADuDUsbkKSRe6fLSgA==}
     dev: false
 
-  /@astrojs/image/0.11.1_sharp@0.31.1:
+  /@astrojs/image/0.11.1_sharp@0.31.2:
     resolution: {integrity: sha512-LgmATS/LfDlHyUzhgPfIIJNC7XGZ9sr01ur1Q+IMDgkCCoplUbN1zBt2DY4M0XZ13QaVF1Ok/tCaMjIbh1pSVA==}
     peerDependencies:
       sharp: '>=0.31.0'
@@ -92,7 +92,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.25.9
       mime: 3.0.0
-      sharp: 0.31.1
+      sharp: 0.31.2
       slash: 4.0.0
       web-streams-polyfill: 3.2.1
     dev: false
@@ -1045,7 +1045,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001429
+      caniuse-lite: 1.0.30001430
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1135,7 +1135,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001429
+      caniuse-lite: 1.0.30001430
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -1176,8 +1176,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /caniuse-lite/1.0.30001429:
-    resolution: {integrity: sha512-511ThLu1hF+5RRRt0zYCf2U2yRr9GPF6m5y90SBCWsvSoYoW7yAGlv/elyPaNfvGCkp6kj/KFZWU0BMA69Prsg==}
+  /caniuse-lite/1.0.30001430:
+    resolution: {integrity: sha512-IB1BXTZKPDVPM7cnV4iaKaHxckvdr/3xtctB3f7Hmenx3qYBhGtTZ//7EllK66aKXW98Lx0+7Yr0kxBtIt3tzg==}
     dev: false
 
   /ccount/2.0.1:
@@ -4200,6 +4200,21 @@ packages:
 
   /sharp/0.31.1:
     resolution: {integrity: sha512-GR8M1wBwOiFKLkm9JPun27OQnNRZdHfSf9VwcdZX6UrRmM1/XnOrLFTF0GAil+y/YK4E6qcM/ugxs80QirsHxg==}
+    engines: {node: '>=14.15.0'}
+    requiresBuild: true
+    dependencies:
+      color: 4.2.3
+      detect-libc: 2.0.1
+      node-addon-api: 5.0.0
+      prebuild-install: 7.1.1
+      semver: 7.3.8
+      simple-get: 4.0.1
+      tar-fs: 2.1.1
+      tunnel-agent: 0.6.0
+    dev: false
+
+  /sharp/0.31.2:
+    resolution: {integrity: sha512-DUdNVEXgS5A97cTagSLIIp8dUZ/lZtk78iNVZgHdHbx1qnQR7JAHY0BnXnwwH39Iw+VKhO08CTYhIg0p98vQ5Q==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
