@@ -11,7 +11,7 @@ const defaultTwemojiOptions = {
 const defaultOptions = {
   exclude: [],
   containerClassName: 'not-prose inline-block h-8 w-8 mx-[1px] align-text-bottom',
-  // className: '',
+  className: '',
   twemoji: defaultTwemojiOptions,
 }
 
@@ -72,7 +72,7 @@ function makeTransformer(options) {
                     type: 'element',
                     tagName: 'img',
                     properties: {
-                      // className: [options.className],
+                      className: [options.className],
                       draggable: 'false',
                       alt: segment.emoji,
                       decoding: 'async',
