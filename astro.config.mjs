@@ -39,7 +39,7 @@ const compressOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress(compressOptions)],
+  site: 'https://neko-astro-blog.vercel.app',
   markdown: {
     drafts: true,
     syntaxHighlight: 'shiki',
@@ -47,4 +47,5 @@ export default defineConfig({
       theme: 'one-dark-pro',
     },
   },
+  integrations: [tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress(compressOptions)],
 })
