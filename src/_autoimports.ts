@@ -1,6 +1,6 @@
 // @ts-nocheck
-import Counter from '@/components/MDX/Counter.astro'
+import Collapse from '@/components/MDX/Collapse.astro'
 
 export const autoimports = {
-  Counter,
+  Collapse,
 }

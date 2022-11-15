@@ -26,6 +26,7 @@
     "astro-m2dx": "0.7.7",
     "clsx": "^1.2.1",
     "emoji-regex": "^10.2.1",
+    "gsap": "^3.11.3",
     "mdast-util-to-string": "^3.1.0",
     "reading-time": "^1.5.0",
     "rehype-twemojify": "^3.1.0",

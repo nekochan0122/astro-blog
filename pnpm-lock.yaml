@@ -14,6 +14,7 @@ specifiers:
   astro-m2dx: 0.7.7
   clsx: ^1.2.1
   emoji-regex: ^10.2.1
+  gsap: ^3.11.3
   mdast-util-to-string: ^3.1.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
@@ -43,6 +44,7 @@ dependencies:
   astro-m2dx: 0.7.7
   clsx: 1.2.1
   emoji-regex: 10.2.1
+  gsap: 3.11.3
   mdast-util-to-string: 3.1.0
   reading-time: 1.5.0
   rehype-twemojify: 3.1.0
@@ -2298,6 +2300,10 @@ packages:
       kind-of: 6.0.3
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
+    dev: false
+
+  /gsap/3.11.3:
+    resolution: {integrity: sha512-xc/iIJy+LWiMbRa4IdMtdnnKa/7PXEK6NNzV71gdOYUVeTZN7UWnLU0fB7Hi1iwiz4ZZoYkBZPPYGg+2+zzFHA==}
     dev: false
 
   /has-flag/3.0.0:
