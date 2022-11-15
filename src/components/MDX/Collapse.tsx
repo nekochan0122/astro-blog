@@ -36,6 +36,7 @@ export default function Collapse({ title, children }: CollapseProps) {
         <span>{title}</span>
         <svg
           ref={iconRef}
+          class='hidden sm:inline-block'
           stroke='currentColor'
           fill='currentColor'
           stroke-width='0'
