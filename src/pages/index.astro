@@ -1,11 +1,12 @@
 ---
 import { Image } from '@astrojs/image/components'
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import { getFileName } from '@/lib/utils'
+import PostCard from '@/components/PostCard.astro'
 import avatar from '@/images/81856932_p0_400x400.jpg'
+import type { Frontmatter } from '@/types'
 
-const posts = await Astro.glob('./post/*.mdx')
-const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
+const posts = await Astro.glob<Frontmatter>('./post/*.mdx')
+const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
 ---
 
 <BaseLayout title={"NekoChan's Blog"} description='NekoChan - Full Stack Web Developer'>
@@ -22,15 +23,5 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft)
       <Image src={avatar} alt='avatar' class='rounded-full' draggable={false} format='webp' />
     </div>
   </div>
-  {
-    nonDraftPosts.map((post) => (
-      <a
-        href={`/post/${post.frontmatter.slug ?? getFileName(post.file)}`}
-        class='block box-border mb-8 p-4 rounded-lg transition-colors hover:bg-gray-200 dark:hover:bg-gray-800'
-      >
-        <h4 class='mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100'>{post.frontmatter.title}</h4>
-        <p class='text-gray-600 dark:text-gray-400'>{post.frontmatter.description}</p>
-      </a>
-    ))
-  }
+  {nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)}
 </BaseLayout>

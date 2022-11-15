@@ -6,6 +6,7 @@ import image from '@astrojs/image'
 import compress from 'astro-compress'
 import m2dx from 'astro-m2dx'
 import remarkToc from 'remark-toc'
+import remarkRouteSlug from './src/plugins/remark-route-slug'
 import remarkReadingTime from './src/plugins/remark-reading-time'
 import rehypeTwemoji from './src/plugins/rehype-twemoji'
 
@@ -20,7 +21,7 @@ const m2dxOptions = {
 
 /** @type {import('@astrojs/mdx').MdxOptions} */
 const mdxOptions = {
-  remarkPlugins: [[m2dx, m2dxOptions], remarkToc, remarkReadingTime],
+  remarkPlugins: [[m2dx, m2dxOptions], remarkToc, remarkRouteSlug, remarkReadingTime],
   rehypePlugins: [rehypeTwemoji],
   extendPlugins: 'astroDefaults', // remark-gfm, remark-smartypants
 }
