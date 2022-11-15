@@ -9,30 +9,30 @@ import remarkToc from 'remark-toc'
 import remarkRouteSlug from './src/plugins/remark-route-slug'
 import remarkReadingTime from './src/plugins/remark-reading-time'
 import rehypeTwemoji from './src/plugins/rehype-twemoji'
+import type { Options as M2dxOptions } from 'astro-m2dx'
+import type { MdxOptions } from '@astrojs/mdx'
+import type { IntegrationOptions } from '@astrojs/image'
+import type { Options as CompressOptions } from 'astro-compress/dist/options'
 
 // https://astro-m2dx.netlify.app/
-/** @type {import('astro-m2dx').Options} */
-const m2dxOptions = {
+const m2dxOptions: M2dxOptions = {
   frontmatter: true,
   exportComponents: true,
   autoImports: true,
   relativeImages: true,
 }
 
-/** @type {import('@astrojs/mdx').MdxOptions} */
-const mdxOptions = {
+const mdxOptions: MdxOptions = {
   remarkPlugins: [[m2dx, m2dxOptions], remarkToc, remarkRouteSlug, remarkReadingTime],
   rehypePlugins: [rehypeTwemoji],
   extendPlugins: 'astroDefaults', // remark-gfm, remark-smartypants
 }
 
-/** @type {import('@astrojs/image').IntegrationOptions} */
-const imageOptions = {
+const imageOptions: IntegrationOptions = {
   serviceEntryPoint: '@astrojs/image/sharp',
 }
 
-/** @type {import('astro-compress/dist/options').Options} */
-const compressOptions = {
+const compressOptions: CompressOptions = {
   img: {
     webp: false,
   },
