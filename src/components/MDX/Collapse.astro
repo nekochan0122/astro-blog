@@ -1,10 +1,8 @@
 ---
 import Collapse from './Collapse'
 import type { CollapseProps } from './Collapse'
-
-const collapseProps = Astro.props as CollapseProps
 ---
 
-<Collapse client:visible {...collapseProps}>
+<Collapse client:visible {...Astro.props as CollapseProps}>
   <slot />
 </Collapse>
