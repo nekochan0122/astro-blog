@@ -3,6 +3,6 @@ import getReadingTime from 'reading-time'
 
 export default function remarkReadingTime() {
   return (tree, { data }) => {
-    data.astro.frontmatter.minutesRead = getReadingTime(toString(tree))
+    data.astro.frontmatter.minutesRead = getReadingTime(toString(tree)).text
   }
 }
