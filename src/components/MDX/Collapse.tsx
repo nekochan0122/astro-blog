@@ -28,7 +28,7 @@ export default function Collapse({ title, children }: CollapseProps) {
       <button
         type='button'
         class={cx(
-          'flex w-full items-center justify-between bg-[#e5e7eb] py-2 px-4 text-start text-xl transition-[background-color] duration-300 dark:bg-[#161b22]',
+          'flex w-full items-center justify-between bg-[#e5e7eb] py-2 px-4 text-xl transition-[background-color] duration-300 dark:bg-[#161b22]',
           isOpen() && 'bg-[#d1d5db] dark:bg-[#1f2937]'
         )}
         onClick={toggle}
