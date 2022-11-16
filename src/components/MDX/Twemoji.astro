@@ -1,0 +1,17 @@
+---
+import twemoji from 'twemoji'
+
+interface Props {
+  emoji: string
+}
+
+const { emoji } = Astro.props
+
+const codePoint = twemoji.convert.toCodePoint(
+  emoji.indexOf(String.fromCharCode(0x200d)) < 0 ? emoji.replace(/\uFE0F/g, '') : emoji
+)
+---
+
+<i class='not-prose inline-block h-8 w-8 mx-[1px] align-text-bottom'>
+  <img src={`https://twemoji.maxcdn.com/v/latest/72x72/${codePoint}.png`} alt={emoji} draggable={false} />
+</i>
