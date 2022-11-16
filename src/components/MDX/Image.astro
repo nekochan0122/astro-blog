@@ -1,0 +1,16 @@
+---
+import { Image } from '@astrojs/image/components'
+import type { Props } from '@astrojs/image/components/Image.astro'
+import emojiRegex from 'emoji-regex'
+
+const { src, draggable = 'false', format = 'webp', ...props } = Astro.props as Props
+const EmojiRegex = emojiRegex()
+---
+
+{
+  EmojiRegex.test(props.alt) ? (
+    <img {src} draggable={draggable} {...props} />
+  ) : (
+    <Image {src} draggable={draggable} format={format} {...props} />
+  )
+}

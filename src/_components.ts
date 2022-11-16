@@ -3,7 +3,7 @@ import Heading2 from '@/components/MDX/Heading2.astro'
 import Heading3 from '@/components/MDX/Heading3.astro'
 import Heading4 from '@/components/MDX/Heading4.astro'
 import CodeBlock from '@/components/MDX/CodeBlock.astro'
-import { Image } from '@astrojs/image/components'
+import Image from '@/components/MDX/Image.astro'
 
 export const components = {
   h1: Heading2,
