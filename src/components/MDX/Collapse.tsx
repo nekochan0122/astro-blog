@@ -4,11 +4,11 @@ import { cx } from '@/lib/utils'
 import type { JSXElement } from 'solid-js'
 
 export interface CollapseProps {
-  title: string
+  header: string
   children: JSXElement
 }
 
-export default function Collapse({ title, children }: CollapseProps) {
+export default function Collapse({ header, children: content }: CollapseProps) {
   const [isOpen, setIsOpen] = createSignal(false)
 
   let iconRef: SVGSVGElement | undefined
@@ -33,7 +33,7 @@ export default function Collapse({ title, children }: CollapseProps) {
         )}
         onClick={toggle}
       >
-        <span>{title}</span>
+        <span>{header}</span>
         <svg
           ref={iconRef}
           class='hidden sm:inline-block'
@@ -50,7 +50,7 @@ export default function Collapse({ title, children }: CollapseProps) {
         </svg>
       </button>
       <div ref={contentRef} class='h-0 overflow-hidden bg-[#e5e7eb]/50 dark:bg-[#161b22]/70'>
-        <div class='m-4'>{children}</div>
+        <div class='m-4'>{content}</div>
       </div>
     </div>
   )
