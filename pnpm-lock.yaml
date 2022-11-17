@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/image': ^0.11.4
+  '@astrojs/image': ^0.11.6
   '@astrojs/mdx': ^0.11.6
   '@astrojs/solid-js': ^1.2.3
   '@astrojs/tailwind': ^2.1.2
@@ -9,18 +9,18 @@ specifiers:
   '@fontsource/inter': ^4.5.14
   '@tailwindcss/typography': ^0.5.8
   '@types/hast': ^2.3.4
-  astro: ^1.6.8
-  astro-compress: ^1.1.6
+  astro: ^1.6.10
+  astro-compress: ^1.1.7
   astro-m2dx: 0.7.7
   clsx: ^1.2.1
   emoji-regex: ^10.2.1
   gsap: ^3.11.3
   mdast-util-to-string: ^3.1.0
+  mdast-util-toc: ^6.1.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
   reading-time: ^1.5.0
   rehype-twemojify: ^3.1.0
-  remark-toc: ^8.0.1
   sharp: ^0.31.2
   solid-js: ^1.6.2
   string-replace-to-array: ^2.1.0
@@ -29,9 +29,10 @@ specifiers:
   twemoji: ^14.0.2
   unified: ^10.1.2
   unist-util-map: ^3.1.2
+  unist-util-visit: ^4.1.1
 
 dependencies:
-  '@astrojs/image': 0.11.4_sharp@0.31.2
+  '@astrojs/image': 0.11.6_sharp@0.31.2
   '@astrojs/mdx': 0.11.6
   '@astrojs/solid-js': 1.2.3_solid-js@1.6.2
   '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
@@ -39,16 +40,16 @@ dependencies:
   '@fontsource/inter': 4.5.14
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@types/hast': 2.3.4
-  astro: 1.6.8
-  astro-compress: 1.1.6
+  astro: 1.6.10
+  astro-compress: 1.1.7
   astro-m2dx: 0.7.7
   clsx: 1.2.1
   emoji-regex: 10.2.1
   gsap: 3.11.3
   mdast-util-to-string: 3.1.0
+  mdast-util-toc: 6.1.0
   reading-time: 1.5.0
   rehype-twemojify: 3.1.0
-  remark-toc: 8.0.1
   sharp: 0.31.2
   solid-js: 1.6.2
   string-replace-to-array: 2.1.0
@@ -57,6 +58,7 @@ dependencies:
   twemoji: 14.0.2
   unified: 10.1.2
   unist-util-map: 3.1.2
+  unist-util-visit: 4.1.1
 
 devDependencies:
   prettier: 2.7.1
@@ -76,12 +78,12 @@ packages:
       '@jridgewell/trace-mapping': 0.3.17
     dev: false
 
-  /@astrojs/compiler/0.29.15:
-    resolution: {integrity: sha512-vicPD8oOPNkcFZvz71Uz/nJcadovurUQ3L0yMZNPb6Nn6T1nHhlSHt5nAKaurB2pYU9DrxOFWZS2/RdV+JsWmQ==}
+  /@astrojs/compiler/0.29.17:
+    resolution: {integrity: sha512-6ZbRGVunUMHxROD9Cleqkrfrj/kM9o43nLVwycdxCexCB5G372evy2ZM46LhaG/k5B5yC0PByNHTaGny0ll3iQ==}
     dev: false
 
-  /@astrojs/image/0.11.4_sharp@0.31.2:
-    resolution: {integrity: sha512-5+ryBMs0pzHXOlB0ZbI/KR8LFIpNw/yTelxV/Au7WtgnRbxDBwBDVmUKZr6vhTwqMpSif8YM32t84ayIGJJdMA==}
+  /@astrojs/image/0.11.6_sharp@0.31.2:
+    resolution: {integrity: sha512-/awb4CWvOdoBv896XZcXw+oYEYLezWiaX5Oyk2g4PQ6rEHtZVROj56CFdUbS9ldmIqp3ni7rXNf1XK3dlP5d1A==}
     peerDependencies:
       sharp: '>=0.31.0'
     peerDependenciesMeta:
@@ -143,7 +145,7 @@ packages:
       unified: 10.1.2
       unist-util-map: 3.1.2
       unist-util-visit: 4.1.1
-      vfile: 5.3.5
+      vfile: 5.3.6
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -167,7 +169,7 @@ packages:
       remark-smartypants: 2.0.0
       shiki: 0.11.1
       unist-util-visit: 4.1.1
-      vfile: 5.3.5
+      vfile: 5.3.6
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -184,7 +186,7 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
       uvu: 0.5.6
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /@astrojs/prism/1.0.2:
@@ -606,7 +608,7 @@ packages:
       unist-util-position-from-estree: 1.1.1
       unist-util-stringify-position: 3.0.2
       unist-util-visit: 4.1.1
-      vfile: 5.3.5
+      vfile: 5.3.6
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -619,7 +621,7 @@ packages:
       '@mdx-js/mdx': 2.1.5
       '@rollup/pluginutils': 4.2.1
       source-map: 0.7.4
-      vfile: 5.3.5
+      vfile: 5.3.6
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -934,8 +936,8 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-compress/1.1.6:
-    resolution: {integrity: sha512-XFDkepT28LftKLsnH8F++esMerNOEx2D/B00VVEiCo2gNI7KpXXzrgE+PBN3mJbXxuwgJNhhHd810g9+BVe53g==}
+  /astro-compress/1.1.7:
+    resolution: {integrity: sha512-wz35oDYQMjWb00SNpppOGRR5ccyiLQGzjXTcxcrpRgfQjQVaq2EvT1dUnRxb5bC5ExFqENRC1rH9CIKQWY2T0A==}
     dependencies:
       csso: 5.0.5
       deepmerge-ts: 4.2.2
@@ -962,12 +964,12 @@ packages:
       - supports-color
     dev: false
 
-  /astro/1.6.8:
-    resolution: {integrity: sha512-+kOj8s2fguCFCim9he6fl9iugIHrmAl7BmfNXdTdC9zU30VYV162HF5eRJyMlY5hGuDn3GvAoaNSzCMnybVsFQ==}
+  /astro/1.6.10:
+    resolution: {integrity: sha512-W/ZGROkCKsDicpiXB82n8EkY6I0/12wdXS80NGaBdIUR1jZZxdN+0YMmdz+C2kYbjlo45KUsXpC/Tej+5KQYSQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 0.29.15
+      '@astrojs/compiler': 0.29.17
       '@astrojs/language-server': 0.28.3
       '@astrojs/markdown-remark': 1.1.3
       '@astrojs/telemetry': 1.0.1
@@ -1021,9 +1023,9 @@ packages:
       strip-ansi: 7.0.1
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
-      typescript: 4.8.4
+      typescript: 4.9.3
       unist-util-visit: 4.1.1
-      vfile: 5.3.5
+      vfile: 5.3.6
       vite: 3.2.4
       vitefu: 0.2.1_vite@3.2.4
       yargs-parser: 21.1.1
@@ -2360,7 +2362,7 @@ packages:
       '@types/unist': 2.0.6
       hastscript: 7.1.0
       property-information: 6.1.1
-      vfile: 5.3.5
+      vfile: 5.3.6
       vfile-location: 4.0.1
       web-namespaces: 2.0.1
     dev: false
@@ -2389,9 +2391,9 @@ packages:
       parse5: 6.0.1
       unist-util-position: 4.0.3
       unist-util-visit: 4.1.1
-      vfile: 5.3.5
+      vfile: 5.3.6
       web-namespaces: 2.0.1
-      zwitch: 2.0.3
+      zwitch: 2.0.4
     dev: false
 
   /hast-util-to-estree/2.1.0:
@@ -2411,7 +2413,7 @@ packages:
       space-separated-tokens: 2.0.2
       style-to-object: 0.3.0
       unist-util-position: 4.0.3
-      zwitch: 2.0.3
+      zwitch: 2.0.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2439,7 +2441,7 @@ packages:
       hast-to-hyperscript: 10.0.1
       property-information: 6.1.1
       web-namespaces: 2.0.1
-      zwitch: 2.0.3
+      zwitch: 2.0.4
     dev: false
 
   /hast-util-whitespace/2.0.0:
@@ -2950,7 +2952,7 @@ packages:
       stringify-entities: 4.0.3
       unist-util-remove-position: 4.0.1
       unist-util-stringify-position: 3.0.2
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /mdast-util-mdx-jsx/2.1.0:
@@ -2965,7 +2967,7 @@ packages:
       stringify-entities: 4.0.3
       unist-util-remove-position: 4.0.1
       unist-util-stringify-position: 3.0.2
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /mdast-util-mdx/2.0.0:
@@ -3013,7 +3015,7 @@ packages:
       mdast-util-to-string: 3.1.0
       micromark-util-decode-string: 1.0.2
       unist-util-visit: 4.1.1
-      zwitch: 2.0.3
+      zwitch: 2.0.4
     dev: false
 
   /mdast-util-to-string/3.1.0:
@@ -3183,7 +3185,7 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
       uvu: 0.5.6
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /micromark-extension-mdx-md/1.0.0:
@@ -3202,7 +3204,7 @@ packages:
       micromark-util-types: 1.0.2
       unist-util-position-from-estree: 1.1.1
       uvu: 0.5.6
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /micromark-extension-mdxjs/1.0.0:
@@ -3245,7 +3247,7 @@ packages:
       micromark-util-types: 1.0.2
       unist-util-position-from-estree: 1.1.1
       uvu: 0.5.6
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /micromark-factory-space/1.0.0:
@@ -3330,7 +3332,7 @@ packages:
       micromark-util-types: 1.0.2
       uvu: 0.5.6
       vfile-location: 4.0.1
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /micromark-util-html-tag-name/1.1.0:
@@ -3813,7 +3815,7 @@ packages:
     resolution: {integrity: sha512-ehCUx7MqHWvkHwUmxxAWLsL35pFaCTM5YXQ8xjG/1W6dY2yBhvEks+2aCfjeI5zmMrZNCXkiMQtpznSlLSLrxw==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
-      '@astrojs/compiler': 0.29.15
+      '@astrojs/compiler': 0.29.17
       prettier: 2.7.1
       sass-formatter: 0.7.5
       synckit: 0.8.4
@@ -4039,14 +4041,6 @@ packages:
     dependencies:
       '@types/mdast': 3.0.10
       mdast-util-to-markdown: 1.3.0
-      unified: 10.1.2
-    dev: false
-
-  /remark-toc/8.0.1:
-    resolution: {integrity: sha512-7he2VOm/cy13zilnOTZcyAoyoolV26ULlon6XyCFU+vG54Z/LWJnwphj/xKIDLOt66QmJUgTyUvLVHi2aAElyg==}
-    dependencies:
-      '@types/mdast': 3.0.10
-      mdast-util-toc: 6.1.0
       unified: 10.1.2
     dev: false
 
@@ -4612,8 +4606,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
-  /typescript/4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+  /typescript/4.9.3:
+    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: false
@@ -4631,7 +4625,7 @@ packages:
       is-buffer: 2.0.5
       is-plain-obj: 4.1.0
       trough: 2.1.0
-      vfile: 5.3.5
+      vfile: 5.3.6
     dev: false
 
   /unist-builder/3.0.0:
@@ -4757,23 +4751,23 @@ packages:
     resolution: {integrity: sha512-JDxPlTbZrZCQXogGheBHjbRWjESSPEak770XwWPfw5mTc1v1nWGLB/apzZxsx8a0SJVfF8HK8ql8RD308vXRUw==}
     dependencies:
       '@types/unist': 2.0.6
-      vfile: 5.3.5
+      vfile: 5.3.6
     dev: false
 
-  /vfile-message/3.1.2:
-    resolution: {integrity: sha512-QjSNP6Yxzyycd4SVOtmKKyTsSvClqBPJcd00Z0zuPj3hOIjg0rUPG6DbFGPvUKRgYyaIWLPKpuEclcuvb3H8qA==}
+  /vfile-message/3.1.3:
+    resolution: {integrity: sha512-0yaU+rj2gKAyEk12ffdSbBfjnnj+b1zqTBv3OQCTn8yEB02bsPizwdBPrLJjHnK+cU9EMMcUnNv938XcZIkmdA==}
     dependencies:
       '@types/unist': 2.0.6
       unist-util-stringify-position: 3.0.2
     dev: false
 
-  /vfile/5.3.5:
-    resolution: {integrity: sha512-U1ho2ga33eZ8y8pkbQLH54uKqGhFJ6GYIHnnG5AhRpAh3OWjkrRHKa/KogbmQn8We+c0KVV3rTOgR9V/WowbXQ==}
+  /vfile/5.3.6:
+    resolution: {integrity: sha512-ADBsmerdGBs2WYckrLBEmuETSPyTD4TuLxTrw0DvjirxW1ra4ZwkbzG8ndsv3Q57smvHxo677MHaQrY9yxH8cA==}
     dependencies:
       '@types/unist': 2.0.6
       is-buffer: 2.0.5
       unist-util-stringify-position: 3.0.2
-      vfile-message: 3.1.2
+      vfile-message: 3.1.3
     dev: false
 
   /vite/3.2.4:
@@ -4978,6 +4972,6 @@ packages:
     resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
     dev: false
 
-  /zwitch/2.0.3:
-    resolution: {integrity: sha512-dn/sDAIuRCsXGnBD4P+SA6nv7Y54HQZjC4SPL8PToU3714zu7wSEc1129D/i0+vvjRfOlFo4Zqrpwj+Zhcykhw==}
+  /zwitch/2.0.4:
+    resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
