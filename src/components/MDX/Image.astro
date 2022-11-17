@@ -1,7 +1,7 @@
 ---
+import emojiRegex from 'emoji-regex'
 import { Image } from '@astrojs/image/components'
 import type { Props } from '@astrojs/image/components/Image.astro'
-import emojiRegex from 'emoji-regex'
 
 const { src, draggable = 'false', format = 'webp', ...props } = Astro.props as Props
 const EmojiRegex = emojiRegex()
