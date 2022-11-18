@@ -9,7 +9,7 @@ export default function Counter() {
     <div class='flex gap-x-4'>
       <button
         type='button'
-        class='touch-manipulation rounded py-2 px-3 transition-colors hover:bg-gray-200 dark:hover:bg-gray-800'
+        class='touch-manipulation rounded py-2 px-3 transition-[background-color] hover:bg-gray-200 dark:hover:bg-gray-800'
         onClick={add}
       >
         the count is <span class='inline-block min-w-[2ch]'>{count()}</span>
