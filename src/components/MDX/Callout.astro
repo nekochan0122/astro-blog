@@ -5,13 +5,17 @@ import Success from './icons/Success.astro'
 import Warning from './icons/Warning.astro'
 import Error from './icons/Error.astro'
 
-const containerStyles = cva('rounded-md border p-4 my-8', {
+interface Props extends VariantProps<typeof containerStyles> {
+  header: string
+}
+
+const containerStyles = cva('flex flex-col rounded-md border-2 p-3 sm:p-4 my-8', {
   variants: {
     type: {
-      info: 'bg-blue-100 dark:bg-blue-200 text-blue-700',
-      success: 'bg-green-100 dark:bg-green-200 text-green-700',
-      warning: 'bg-yellow-100  dark:bg-yellow-200 text-yellow-700',
-      error: 'bg-red-100 dark:bg-red-200 text-red-700',
+      info: 'border-blue-500 text-blue-500',
+      success: 'border-green-500 text-green-500',
+      warning: 'border-yellow-500 text-yellow-500',
+      error: 'border-red-500 text-red-500',
     },
   },
   defaultVariants: {
@@ -19,7 +23,7 @@ const containerStyles = cva('rounded-md border p-4 my-8', {
   },
 })
 
-const { type = 'info' } = Astro.props as VariantProps<typeof containerStyles>
+const { type = 'info', header = type?.toUpperCase() } = Astro.props
 
 if (!type) return
 
@@ -33,11 +37,12 @@ const Icon = {
 
 <div class={containerStyles({ type })}>
   <div class='flex items-center'>
-    <div class='flex-shrink-0'>
+    <i class='shrink-0'>
       <Icon />
-    </div>
-    <div class='ml-3 flex-1 md:flex md:justify-between'>
-      <slot />
-    </div>
+    </i>
+    <div class='ml-2 sm:ml-3 font-bold'>{header}</div>
+  </div>
+  <div class='ml-8 sm:ml-9 text-black dark:text-white'>
+    <slot />
   </div>
 </div>
