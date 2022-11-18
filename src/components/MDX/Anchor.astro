@@ -1,0 +1,12 @@
+---
+type Props = astroHTML.JSX.AnchorHTMLAttributes & {
+  href: string
+}
+
+const { href } = Astro.props
+const isExternal = !href.startsWith('#')
+---
+
+<a {...(isExternal && { target: '_blank', rel: 'noopener' })} {...Astro.props}>
+  <slot />
+</a>
