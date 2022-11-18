@@ -16,7 +16,7 @@ const items = [
       items.map(({ name, url }) => (
         <a
           class={cx(
-            'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors',
+            'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-[background-color]',
             Astro.url.pathname === url ? 'text-gray-800 dark:text-gray-200' : 'text-gray-400'
           )}
           href={url}
