@@ -28,8 +28,8 @@ export default function Collapse({ header, children: content }: CollapseProps) {
       <button
         type='button'
         class={cx(
-          'flex w-full touch-manipulation items-center justify-between bg-[#e5e7eb] py-2 px-4 text-xl transition-[background-color] duration-300 dark:bg-[#161b22]',
-          isOpen() && 'bg-[#d1d5db] dark:bg-[#1f2937]'
+          'flex w-full touch-manipulation items-center justify-between bg-slate-100 py-2 px-4 text-xl transition-[background-color] duration-300 hover:bg-slate-200 dark:bg-gray-800 dark:hover:bg-gray-700',
+          isOpen() && 'bg-slate-200 dark:bg-gray-700'
         )}
         onClick={toggle}
       >
@@ -49,7 +49,10 @@ export default function Collapse({ header, children: content }: CollapseProps) {
           <polygon fill='#2196F3' points='5,30.9 8.1,34 24,18.1 39.9,34 43,30.9 24,12' />
         </svg>
       </button>
-      <div ref={contentRef} class='h-0 overflow-hidden bg-[#e5e7eb]/50 dark:bg-[#161b22]/70'>
+      <div
+        ref={contentRef}
+        class='h-0 overflow-hidden bg-slate-100 transition-[background-color] duration-300 dark:bg-gray-800'
+      >
         <div class='m-4'>{content}</div>
       </div>
     </div>
