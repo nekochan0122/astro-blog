@@ -26,7 +26,7 @@ const { result } = (await ogs({ url: src })) as any
     <p class='text-sm'>{result.ogDescription}</p>
   </div>
   {
-    result.ogImage.url && (
+    result.ogImage?.url && (
       <Image
         class={cx(
           'rounded-md',
