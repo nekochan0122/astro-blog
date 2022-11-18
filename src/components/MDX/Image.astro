@@ -8,9 +8,11 @@ const EmojiRegex = emojiRegex()
 ---
 
 {
-  EmojiRegex.test(props.alt) ? (
-    <img {src} draggable={draggable} {...props} />
-  ) : (
+  EmojiRegex.test(props.alt) ? ( // Twemoji
+    <img src={src} draggable={draggable} loading='lazy' decoding='async' {...props} />
+  ) : !src.width || !src.height ? ( // Remote image
+    <img src={src} draggable={draggable} loading='lazy' decoding='async' class='mx-0 w-full' {...props} />
+  ) : ( // Local image
     <Image {src} draggable={draggable} format={format} {...props} />
   )
 }
