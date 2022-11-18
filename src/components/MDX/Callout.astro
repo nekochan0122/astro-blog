@@ -1,0 +1,43 @@
+---
+import { cva, VariantProps } from 'class-variance-authority'
+import Info from './icons/Info.astro'
+import Success from './icons/Success.astro'
+import Warning from './icons/Warning.astro'
+import Error from './icons/Error.astro'
+
+const containerStyles = cva('rounded-md border p-4 my-8', {
+  variants: {
+    type: {
+      info: 'bg-blue-100 dark:bg-blue-200 text-blue-700',
+      success: 'bg-green-100 dark:bg-green-200 text-green-700',
+      warning: 'bg-yellow-100  dark:bg-yellow-200 text-yellow-700',
+      error: 'bg-red-100 dark:bg-red-200 text-red-700',
+    },
+  },
+  defaultVariants: {
+    type: 'info',
+  },
+})
+
+const { type = 'info' } = Astro.props as VariantProps<typeof containerStyles>
+
+if (!type) return
+
+const Icon = {
+  info: Info,
+  success: Success,
+  warning: Warning,
+  error: Error,
+}[type]
+---
+
+<div class={containerStyles({ type })}>
+  <div class='flex items-center'>
+    <div class='flex-shrink-0'>
+      <Icon />
+    </div>
+    <div class='ml-3 flex-1 md:flex md:justify-between'>
+      <slot />
+    </div>
+  </div>
+</div>

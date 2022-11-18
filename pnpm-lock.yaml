@@ -12,6 +12,7 @@ specifiers:
   astro: ^1.6.10
   astro-compress: ^1.1.7
   astro-m2dx: 0.7.7
+  class-variance-authority: ^0.3.0
   clsx: ^1.2.1
   emoji-regex: ^10.2.1
   gsap: ^3.11.3
@@ -43,6 +44,7 @@ dependencies:
   astro: 1.6.10
   astro-compress: 1.1.7
   astro-m2dx: 0.7.7
+  class-variance-authority: 0.3.0
   clsx: 1.2.1
   emoji-regex: 10.2.1
   gsap: 3.11.3
@@ -1248,6 +1250,15 @@ packages:
   /ci-info/3.6.1:
     resolution: {integrity: sha512-up5ggbaDqOqJ4UqLKZ2naVkyqSJQgJi5lwD6b6mM748ysrghDBX0bx/qJTUHzw7zu6Mq4gycviSF5hJnwceD8w==}
     engines: {node: '>=8'}
+    dev: false
+
+  /class-variance-authority/0.3.0:
+    resolution: {integrity: sha512-TFO+pzY9Gedqv8crPhprd647wxhvfpKevPPjiMcteEWsnkHX9yZrD1xMY3ZhRZnLwHUHCCP0LYO6KZIVag/5wQ==}
+    peerDependencies:
+      typescript: '>= 4.5.5 < 5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dev: false
 
   /clean-css/5.2.0:

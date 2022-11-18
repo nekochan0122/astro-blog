@@ -1,8 +1,10 @@
 // @ts-nocheck
-import Twemoji from '@/components/MDX/Twemoji.astro'
 import Collapse from '@/components/MDX/Collapse.astro'
+import Callout from '@/components/MDX/Callout.astro'
+import Twemoji from '@/components/MDX/Twemoji.astro'
 
 export const autoimports = {
-  Twemoji,
   Collapse,
+  Callout,
+  Twemoji,
 }
