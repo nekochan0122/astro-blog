@@ -1,6 +1,7 @@
 ---
 import emojiRegex from 'emoji-regex'
 import { Image } from '@astrojs/image/components'
+import { cx } from '@/lib/utils'
 import type { Props } from '@astrojs/image/components/Image.astro'
 
 const { src, draggable = 'false', format = 'webp', ...props } = Astro.props as Props
@@ -10,9 +11,17 @@ const EmojiRegex = emojiRegex()
 {
   EmojiRegex.test(props.alt) ? ( // Twemoji
     <img src={src} draggable={draggable} loading='lazy' decoding='async' {...props} />
-  ) : !src.width || !src.height ? ( // Remote image
-    <img src={src} draggable={draggable} loading='lazy' decoding='async' class='mx-0 w-full' {...props} />
-  ) : ( // Local image
+  ) : !src?.width || !src?.height ? ( // Remote image
+    <img
+      src={src}
+      draggable={draggable}
+      loading='lazy'
+      decoding='async'
+      class={cx('mx-0 w-full', props.class)}
+      {...props}
+    />
+  ) : (
+    // Local image
     <Image {src} draggable={draggable} format={format} {...props} />
   )
 }

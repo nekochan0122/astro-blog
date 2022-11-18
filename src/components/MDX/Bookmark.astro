@@ -1,0 +1,41 @@
+---
+import ogs from 'open-graph-scraper'
+import Image from './Image.astro'
+import { cx } from '@/lib/utils'
+
+interface Props {
+  src: string
+}
+
+const { src } = Astro.props
+const { result } = (await ogs({ url: src })) as any
+---
+
+<a
+  href={src}
+  target='_blank'
+  rel='noreferrer'
+  class={cx(
+    'flex bg-slate-100 dark:bg-gray-800 not-prose p-4 justify-between no-underline rounded-md my-8 hover:bg-slate-200 dark:hover:bg-gray-700 transition-[background-color]',
+    result.twitterCard === 'summary_large_image' && 'flex-col'
+  )}
+>
+  <div class='flex flex-col justify-center text-black dark:text-white'>
+    <h2 class='text-base'>{result.ogSiteName}</h2>
+    <h3 class='text-md'>{result.ogTitle}</h3>
+    <p class='text-sm'>{result.ogDescription}</p>
+  </div>
+  {
+    result.ogImage.url && (
+      <Image
+        class={cx('w-28 rounded-md', result.twitterCard === 'summary_large_image' && 'w-full mt-4')}
+        src={
+          !result.ogImage.width
+            ? result.ogImage.url
+            : { src: result.ogImage.url, width: result.ogImage.width, height: result.ogImage.height }
+        }
+        alt={result.ogTitle}
+      />
+    )
+  }
+</a>

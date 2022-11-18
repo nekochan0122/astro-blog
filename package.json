@@ -30,6 +30,7 @@
     "gsap": "^3.11.3",
     "mdast-util-to-string": "^3.1.0",
     "mdast-util-toc": "^6.1.0",
+    "open-graph-scraper": "^5.0.0",
     "reading-time": "^1.5.0",
     "rehype-twemojify": "^3.1.0",
     "sharp": "^0.31.2",
