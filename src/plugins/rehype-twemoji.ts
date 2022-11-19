@@ -56,7 +56,7 @@ function makeTransformer(options: UserOptions): Transformer<Root, Root> {
   return (tree: Root) => {
     const mappedChildren = tree.children.map(
       (child) =>
-        map(child, (node: RootContent) => {
+        map(child, (node) => {
           if (node.type !== 'text' || !EmojiRegex.test(node.value)) {
             return node
           }
