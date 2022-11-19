@@ -26,10 +26,12 @@ const m2dxOptions: M2dxOptions = {
   autoImports: true,
   relativeImages: true,
 }
+
 const remarkTocOptions: RemarkTocOptions = {
   tight: true,
   ordered: false,
 }
+
 const mdxOptions: MdxOptions = {
   remarkPlugins: [[m2dx, m2dxOptions], [remarkToc, remarkTocOptions], remarkRouteSlug, remarkReadingTime, remarkDebug],
   rehypePlugins: [rehypeTwemoji],
@@ -39,6 +41,7 @@ const mdxOptions: MdxOptions = {
 const imageOptions: IntegrationOptions = {
   serviceEntryPoint: '@astrojs/image/sharp',
 }
+
 const compressOptions: CompressOptions = {
   img: {
     webp: false,
