@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import prefetch from '@astrojs/prefetch'
 import sitemap from '@astrojs/sitemap'
 import robotsTxt from 'astro-robots-txt'
 import tailwind from '@astrojs/tailwind'
@@ -55,6 +56,7 @@ export default defineConfig({
     },
   },
   integrations: [
+    prefetch(),
     sitemap(),
     robotsTxt(),
     tailwind(),
