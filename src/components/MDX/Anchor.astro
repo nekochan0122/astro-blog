@@ -1,4 +1,5 @@
 ---
+import { cx } from '@/lib/utils'
 type Props = astroHTML.JSX.AnchorHTMLAttributes & {
   href: string
 }
@@ -7,6 +8,13 @@ const { href } = Astro.props
 const isExternal = !href.startsWith('#')
 ---
 
-<a {...(isExternal && { target: '_blank', rel: 'noopener' })} {...Astro.props}>
+<a
+  class={cx(
+    'relative no-underline',
+    'after:hover:scale-100 after:transition-transform after:origin-left after:scale-0 after:absolute after:bottom-[1px] after:left-0 after:w-full after:bg-blue-600 after:h-[2px] after:duration-300'
+  )}
+  {...(isExternal && { target: '_blank', rel: 'noopener' })}
+  {...Astro.props}
+>
   <slot />
 </a>
