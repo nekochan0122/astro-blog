@@ -5,15 +5,16 @@ type Props = astroHTML.JSX.AnchorHTMLAttributes & {
 }
 
 const { href } = Astro.props
-const isExternal = !href.startsWith('#')
 ---
 
 <a
   class={cx(
     'relative no-underline',
-    'after:hover:scale-100 after:transition-transform after:origin-left after:scale-0 after:absolute after:bottom-[1px] after:left-0 after:w-full after:bg-blue-600 after:h-[2px] after:duration-300'
+    Astro.props['data-footnote-ref'] === undefined &&
+      Astro.props['data-footnote-backref'] === undefined &&
+      'after:hover:scale-100 after:transition-transform after:origin-left after:scale-0 after:absolute after:bottom-[1px] after:left-0 after:w-full after:bg-blue-600 after:h-[2px] after:duration-300'
   )}
-  {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+  {...(!href.startsWith('#') && { target: '_blank', rel: 'noopener noreferrer' })}
   {...Astro.props}
 >
   <slot />
