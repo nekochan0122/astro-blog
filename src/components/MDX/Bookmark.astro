@@ -14,7 +14,7 @@ const { result } = (await ogs({ url: src })) as any
 <a
   href={src}
   target='_blank'
-  rel='noreferrer'
+  rel='noopener noreferrer'
   class={cx(
     'flex bg-slate-100 dark:bg-gray-800 not-prose p-2 sm:p-4 justify-between no-underline rounded-md my-8 hover:bg-slate-200 dark:hover:bg-gray-700 transition-[background-color]',
     result.twitterCard === 'summary_large_image' && 'flex-col'
