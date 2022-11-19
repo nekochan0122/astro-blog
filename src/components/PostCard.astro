@@ -1,12 +1,7 @@
 ---
-interface Props {
-  slug: string
-  title: string
-  description: string
-  minutesRead: string
-}
+import type { Frontmatter } from '@/types'
 
-const { slug, title, description, minutesRead } = Astro.props
+const { slug, title, description, minutesRead } = Astro.props as Frontmatter
 ---
 
 <a

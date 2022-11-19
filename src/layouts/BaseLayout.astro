@@ -2,13 +2,9 @@
 import BaseHead from '@/components/BaseHead.astro'
 import Nav from '@/components/Nav.astro'
 import Footer from '@/components/Footer.astro'
+import type { BaseHeadProps } from '@/components/BaseHead.astro'
 
-interface Props {
-  title: string
-  description: string
-}
-
-const { title, description } = Astro.props
+const { title, description } = Astro.props as BaseHeadProps
 ---
 
 <html lang='en' class='scroll-smooth font-serif antialiased'>
