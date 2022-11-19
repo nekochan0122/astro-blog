@@ -7,6 +7,7 @@ specifiers:
   '@astrojs/tailwind': ^2.1.2
   '@fontsource/fira-code': ^4.5.12
   '@fontsource/inter': ^4.5.14
+  '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.8
   '@types/hast': ^2.3.4
   astro: ^1.6.10
@@ -40,6 +41,7 @@ dependencies:
   '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
   '@fontsource/fira-code': 4.5.12
   '@fontsource/inter': 4.5.14
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@types/hast': 2.3.4
   astro: 1.6.10
@@ -701,6 +703,14 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       defer-to-connect: 2.0.1
+    dev: false
+
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4
     dev: false
 
   /@tailwindcss/typography/0.5.8_tailwindcss@3.2.4:

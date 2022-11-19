@@ -1,17 +1,27 @@
 ---
+import { toISODate, toLocalDate } from '@/lib/utils'
+
 interface Props {
   slug: string
   title: string
   description: string
+  date: string
+  minutesRead: string
 }
 
-const { slug, title, description } = Astro.props
+const { slug, title, description, date, minutesRead } = Astro.props
 ---
 
 <a
   href={`/post/${slug}`}
-  class='block box-border mb-8 p-4 rounded-lg transition-[background-color] hover:bg-gray-200 dark:hover:bg-gray-800'
+  class='flex flex-col mb-4 p-2 sm:p-4 rounded-lg transition-[background-color] text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
 >
-  <h4 class='mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100'>{title}</h4>
-  <p class='text-gray-600 dark:text-gray-400'>{description}</p>
+  <h4 class='text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100'>{title}</h4>
+  <p class='line-clamp-2 my-2'>{description}</p>
+  <span class='flex justify-between shrink-0'>
+    <time datetime={toISODate(date)}>
+      {toLocalDate(date)}
+    </time>
+    <span>{minutesRead}</span>
+  </span>
 </a>

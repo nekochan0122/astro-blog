@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro'
+import { toISODate, toLocalDate } from '@/lib/utils'
 import type { MarkdownLayoutProps } from 'astro'
 
 type Props = MarkdownLayoutProps<{
@@ -19,8 +20,8 @@ const { frontmatter } = Astro.props
     <div class='flex items-center'>
       <p class='text-sm text-gray-700 dark:text-gray-300'>
         <span>{frontmatter.author} /</span>
-        <time datetime={new Date(frontmatter.date).toISOString()}>
-          {new Date(frontmatter.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        <time datetime={toISODate(frontmatter.date)}>
+          {toLocalDate(frontmatter.date)}
         </time>
       </p>
     </div>
