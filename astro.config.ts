@@ -40,7 +40,9 @@ const imageOptions: IntegrationOptions = {
 }
 
 const compressOptions: CompressOptions = {
-  img: false,
+  img: {
+    webp: false,
+  },
 }
 
 // https://astro.build/config
