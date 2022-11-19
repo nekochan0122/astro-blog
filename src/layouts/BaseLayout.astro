@@ -1,7 +1,7 @@
 ---
 import BaseHead from '@/components/BaseHead.astro'
 import Nav from '@/components/Nav.astro'
-import { cx } from '@/lib/utils'
+import Footer from '@/components/Footer.astro'
 
 interface Props {
   title: string
@@ -16,11 +16,12 @@ const { title, description } = Astro.props
     <BaseHead title={title} description={description} />
   </head>
   <body
-    class='px-8 [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-[background-color] duration-300 selection:bg-[#67769660]'
+    class='flex flex-col min-h-screen px-8 [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-[background-color] duration-300 selection:bg-[#67769660]'
   >
     <Nav />
-    <main class='max-w-2xl mx-auto'>
+    <main class='max-w-2xl mx-auto w-full'>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
