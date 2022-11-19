@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/image": "^0.11.6",
     "@astrojs/mdx": "^0.11.6",
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/solid-js": "^1.2.3",
     "@astrojs/tailwind": "^2.1.2",
     "@fontsource/fira-code": "^4.5.12",

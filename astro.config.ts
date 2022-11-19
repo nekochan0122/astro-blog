@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import solidJs from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
@@ -23,12 +24,10 @@ const m2dxOptions: M2dxOptions = {
   autoImports: true,
   relativeImages: true,
 }
-
 const remarkTocOptions: RemarkTocOptions = {
   tight: true,
   ordered: false,
 }
-
 const mdxOptions: MdxOptions = {
   remarkPlugins: [[m2dx, m2dxOptions], [remarkToc, remarkTocOptions], remarkRouteSlug, remarkReadingTime, remarkDebug],
   rehypePlugins: [rehypeTwemoji],
@@ -38,7 +37,6 @@ const mdxOptions: MdxOptions = {
 const imageOptions: IntegrationOptions = {
   serviceEntryPoint: '@astrojs/image/sharp',
 }
-
 const compressOptions: CompressOptions = {
   img: {
     webp: false,
@@ -55,5 +53,5 @@ export default defineConfig({
       theme: 'one-dark-pro',
     },
   },
-  integrations: [tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress(compressOptions)],
+  integrations: [sitemap(), tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress(compressOptions)],
 })
