@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
+import robotsTxt from 'astro-robots-txt'
 import tailwind from '@astrojs/tailwind'
 import solidJs from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
@@ -53,5 +54,13 @@ export default defineConfig({
       theme: 'one-dark-pro',
     },
   },
-  integrations: [sitemap(), tailwind(), solidJs(), mdx(mdxOptions), image(imageOptions), compress(compressOptions)],
+  integrations: [
+    sitemap(),
+    robotsTxt(),
+    tailwind(),
+    solidJs(),
+    mdx(mdxOptions),
+    image(imageOptions),
+    compress(compressOptions),
+  ],
 })

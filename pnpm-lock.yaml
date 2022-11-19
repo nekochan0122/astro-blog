@@ -14,6 +14,7 @@ specifiers:
   astro: ^1.6.10
   astro-compress: ^1.1.7
   astro-m2dx: 0.7.7
+  astro-robots-txt: ^0.3.10
   class-variance-authority: ^0.3.0
   clsx: ^1.2.1
   emoji-regex: ^10.2.1
@@ -49,6 +50,7 @@ dependencies:
   astro: 1.6.10
   astro-compress: 1.1.7
   astro-m2dx: 0.7.7
+  astro-robots-txt: 0.3.10
   class-variance-authority: 0.3.0
   clsx: 1.2.1
   emoji-regex: 10.2.1
@@ -1011,6 +1013,14 @@ packages:
       remark-mdx: 2.1.5
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /astro-robots-txt/0.3.10:
+    resolution: {integrity: sha512-fVQOdiVFPgMJEILUFBpNsup3q/RBvYiiecQVyPeWo3Ss+CzjMCkbWBflbFr86+9tTkiX0q1dufNem03QnorJ/w==}
+    dependencies:
+      deepmerge: 4.2.2
+      valid-filename: 4.0.0
+      zod: 3.19.1
     dev: false
 
   /astro/1.6.10:
@@ -2250,6 +2260,11 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
+    dev: false
+
+  /filename-reserved-regex/3.0.0:
+    resolution: {integrity: sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
   /fill-range/7.0.1:
@@ -4984,6 +4999,13 @@ packages:
       diff: 5.1.0
       kleur: 4.1.5
       sade: 1.8.1
+    dev: false
+
+  /valid-filename/4.0.0:
+    resolution: {integrity: sha512-VEYTpTVPMgO799f2wI7zWf0x2C54bPX6NAfbZ2Z8kZn76p+3rEYCTYVYzMUcVSMvakxMQTriBf24s3+WeXJtEg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      filename-reserved-regex: 3.0.0
     dev: false
 
   /validator/13.7.0:
