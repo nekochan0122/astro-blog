@@ -18,6 +18,7 @@ specifiers:
   astro-robots-txt: ^0.3.10
   class-variance-authority: ^0.3.0
   clsx: ^1.2.1
+  dayjs: ^1.11.6
   emoji-regex: ^10.2.1
   gsap: ^3.11.3
   mdast-util-to-string: ^3.1.0
@@ -55,6 +56,7 @@ dependencies:
   astro-robots-txt: 0.3.10
   class-variance-authority: 0.3.0
   clsx: 1.2.1
+  dayjs: 1.11.6
   emoji-regex: 10.2.1
   gsap: 3.11.3
   mdast-util-to-string: 3.1.0
@@ -1525,6 +1527,10 @@ packages:
   /data-uri-to-buffer/4.0.0:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
     engines: {node: '>= 12'}
+    dev: false
+
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
     dev: false
 
   /debug/4.3.4:
