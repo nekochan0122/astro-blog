@@ -10,12 +10,12 @@ A base-head component that includes Open Graph meta tags, CSS files and theme de
 import '@fontsource/inter'
 import '@fontsource/fira-code'
 
-interface Props {
+export interface BaseHeadProps {
   title: string
   description: string
 }
 
-const { title, description } = Astro.props
+const { title, description } = Astro.props as BaseHeadProps
 ---
 
 <meta charset='utf-8' />
