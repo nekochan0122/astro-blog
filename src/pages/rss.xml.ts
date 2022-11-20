@@ -22,5 +22,4 @@ export const get = () =>
       pubDate: new Date(frontmatter.publishedAt),
     })),
     customData: `<language>en-us</language>`,
-    stylesheet: '/pretty-feed-v3.xsl',
   })
