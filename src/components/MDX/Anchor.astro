@@ -18,5 +18,11 @@ const { href } = Astro.props
   {...(!href.startsWith('#') && { target: '_blank', rel: 'noopener noreferrer' })}
   {...Astro.props}
 >
-  {Astro.props['data-footnote-backref'] === undefined ? <slot /> : <FootnoteBackref />}
+  {
+    Astro.props['data-footnote-backref'] === undefined ? (
+      <slot />
+    ) : (
+      <FootnoteBackref className='h-6 w-6 inline-block -rotate-90' />
+    )
+  }
 </a>

@@ -1,13 +1,16 @@
 ---
+interface Props extends astroHTML.JSX.SVGAttributes {
+  className?: string
+}
 ---
 
 <svg
-  class='h-6 w-6 text-yellow-500'
   x-description='Heroicon name: solid/exclamation'
   xmlns='http://www.w3.org/2000/svg'
   viewBox='0 0 20 20'
   fill='currentColor'
   aria-hidden='true'
+  {...Astro.props}
 >
   <path
     fill-rule='evenodd'
