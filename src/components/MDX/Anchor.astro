@@ -1,7 +1,8 @@
 ---
 import FootnoteBackref from './icons/FootnoteBackref.astro'
 import { cx } from '@/lib/utils'
-type Props = astroHTML.JSX.AnchorHTMLAttributes & {
+
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
   href: string
 }
 

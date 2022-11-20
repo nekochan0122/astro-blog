@@ -5,7 +5,7 @@ import BaseLayout from './BaseLayout.astro'
 import type { MarkdownLayoutProps } from 'astro'
 import type { Frontmatter } from '@/types'
 
-type Props = MarkdownLayoutProps<Frontmatter>
+interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
 const {
   frontmatter: { title, description, author, publishedAt, updatedAt, minutesRead },
