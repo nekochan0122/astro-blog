@@ -16,9 +16,16 @@ export default function ThemeToggle() {
 
   createEffect(() => {
     if (document.documentElement.getAttribute('data-theme') === theme()) return
+
+    // Tailwind CSS and LocalStorage
     document.documentElement.setAttribute('style', `color-scheme: ${theme()};`)
     document.documentElement.setAttribute('data-theme', theme())
     localStorage.setItem(Theme.KeyName, theme())
+
+    // Giscus
+    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')
+    if (!iframe?.contentWindow) return
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme() } } }, 'https://giscus.app')
   })
 
   onMount(() => setMounted(true))

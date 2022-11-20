@@ -50,4 +50,34 @@ dayjs.extend(relativeTime)
   >
     <slot />
   </article>
+
+  <div id='giscus'></div>
+
+  <script is:inline>
+    const giscusAttributes = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'NekoChanTaiwan/astro-blog',
+      'data-repo-id': 'R_kgDOIWYjsQ',
+      'data-category': 'Announcements',
+      'data-category-id': 'DIC_kwDOIWYjsc4CSqeT',
+      'data-mapping': 'pathname',
+      'data-strict': '0',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-input-position': 'top',
+      'data-theme': theme,
+      'data-lang': 'en',
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+      async: '',
+      allow: 'interest-cohort',
+    }
+
+    const giscusScript = document.createElement('script')
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value))
+
+    const giscusContainer = document.querySelector('#giscus')
+    if (!giscusContainer) throw new Error('Giscus container not found !')
+    giscusContainer.appendChild(giscusScript)
+  </script>
 </BaseLayout>
