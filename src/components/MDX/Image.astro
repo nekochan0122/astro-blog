@@ -5,7 +5,6 @@ import { cx } from '@/lib/utils'
 import type { Props } from '@astrojs/image/components/Image.astro'
 
 const { src, draggable = 'false', format = 'webp', ...props } = Astro.props as Props
-const className = 'mx-auto w-full rounded-md'
 const EmojiRegex = emojiRegex()
 ---
 
@@ -20,11 +19,17 @@ const EmojiRegex = emojiRegex()
       draggable={draggable}
       loading='lazy'
       decoding='async'
-      class={cx(className, props.class)}
+      class={cx('mx-auto w-full rounded-md', props.class)}
       {...props}
     />
   ) : (
     // Local image
-    <Image {src} draggable={draggable} format={format} class={cx(className, props.class)} {...props} />
+    <Image
+      {src}
+      draggable={draggable}
+      format={format}
+      class={cx('mx-auto w-full rounded-md', props.class)}
+      {...props}
+    />
   )
 }
