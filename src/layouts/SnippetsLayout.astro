@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro'
+import Giscus from '@/components/Giscus.astro'
 import type { MarkdownLayoutProps } from 'astro'
 import type { Frontmatter } from '@/types'
 
@@ -13,4 +14,5 @@ const { title, description } = Astro.props.frontmatter
   <article class='prose lg:prose-xl prose-img:rounded-md mx-auto dark:prose-invert max-w-none w-full'>
     <slot />
   </article>
+  <Giscus />
 </BaseLayout>
