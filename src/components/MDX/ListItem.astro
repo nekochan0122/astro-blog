@@ -1,0 +1,15 @@
+---
+type Props = astroHTML.JSX.LiHTMLAttributes
+---
+
+<li {...Astro.props}>
+  {
+    Astro.props.className === 'task-list-item' ? (
+      <label>
+        <slot />
+      </label>
+    ) : (
+      <slot />
+    )
+  }
+</li>

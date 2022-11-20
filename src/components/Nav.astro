@@ -20,8 +20,8 @@ const items = [
         <a
           href={url}
           class={cx(
-            'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-[background-color]',
-            Astro.url.pathname === url ? 'text-gray-800 dark:text-gray-200' : 'text-gray-400'
+            'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors',
+            Astro.url.pathname === url ? 'text-gray-800 dark:text-gray-200' : 'text-gray-300'
           )}
           {...(url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : { rel: 'prefetch' })}
         >
