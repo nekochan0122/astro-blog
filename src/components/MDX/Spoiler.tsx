@@ -11,16 +11,13 @@ export default function Spoiler({ children }: Props) {
 
   return (
     <span
-      class={cx(
-        'relative inline-block touch-manipulation transition-[filter] duration-300',
-        show() ? 'blur-none' : 'blur-lg'
-      )}
+      class={cx('relative touch-manipulation transition-[filter] duration-300', show() ? 'blur-none' : 'blur-lg')}
       onClick={() => setShow(!show())}
     >
       {children}
       <span
         class={cx(
-          'absolute left-0 top-0 h-full w-full backdrop-blur-3xl  backdrop-brightness-125 transition-opacity duration-300',
+          'absolute left-0 top-0 h-full w-full backdrop-blur-3xl transition-opacity duration-300',
           show() && 'opacity-0'
         )}
         {...(!show() && { title: 'Click to reveal', role: 'button' })}
