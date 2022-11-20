@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Giscus from '@/components/Giscus.astro'
+---
+
+<BaseLayout title='Guestbook – NekoChan' description='Leave some comments here.'>
+  <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Guestbook</h2>
+  <p class='mb-4 text-gray-600 dark:text-gray-300'>Leave a comment below.</p>
+  <Giscus reactions={false} />
+</BaseLayout>
