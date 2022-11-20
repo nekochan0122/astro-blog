@@ -5,11 +5,11 @@ import type { Frontmatter } from '@/types'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
-const { frontmatter } = Astro.props
+const { title, description } = Astro.props.frontmatter
 ---
 
-<BaseLayout title={`${frontmatter.title} – NekoChan`} description={frontmatter.description}>
-  <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{frontmatter.title}</h1>
+<BaseLayout title={`${title} – NekoChan`} description={description}>
+  <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{title}</h1>
   <article class='prose lg:prose-xl prose-img:rounded-md mx-auto dark:prose-invert max-w-none w-full'>
     <slot />
   </article>
