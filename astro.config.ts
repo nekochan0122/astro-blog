@@ -8,6 +8,7 @@ import solidJs from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
 import image from '@astrojs/image'
 import compress from 'astro-compress'
+import remarkImages from './src/plugins/remark-images'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import remarM2dx from 'astro-m2dx'
 import remarkToc from './src/plugins/remark-toc'
@@ -57,6 +58,7 @@ const prettyCodeOptions: PrettyCodeOptions = {
 
 const mdxOptions: MdxOptions = {
   remarkPlugins: [
+    remarkImages,
     remarkUnwrapImages,
     [remarM2dx, remarM2dxOptions],
     [remarkToc, remarkTocOptions],
