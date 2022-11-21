@@ -7,7 +7,7 @@ const items = [
   { name: 'Blog', url: '/blog/' },
   { name: 'Snippets', url: '/snippets/' },
   { name: 'Guestbook', url: '/guestbook/' },
-  { name: 'RSS', url: '/rss.xml' },
+  { name: 'RSS', url: '/rss.xml', target: '_blank' },
 ]
 ---
 
@@ -16,14 +16,14 @@ const items = [
 >
   <div class='ml-[-0.60rem]'>
     {
-      items.map(({ name, url }) => (
+      items.map(({ name, url, target }) => (
         <a
           href={url}
           class={cx(
             'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors',
             Astro.url.pathname === url ? 'text-gray-800 dark:text-gray-200 font-bold' : 'text-gray-300'
           )}
-          {...(url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : { rel: 'prefetch' })}
+          {...(url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : { target, rel: 'prefetch' })}
         >
           {name}
         </a>
