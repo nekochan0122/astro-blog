@@ -12,7 +12,7 @@ import '@/styles/syntaxHighlight.css'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
-const { title, description, author, publishedAt, updatedAt, minutesRead } = Astro.props.frontmatter
+const { title, description, publishedAt, updatedAt, minutesRead } = Astro.props.frontmatter
 
 dayjs.extend(relativeTime)
 ---
@@ -24,13 +24,21 @@ dayjs.extend(relativeTime)
       <Image
         src={avatar}
         alt='NekoChan'
-        class='w-6 h-6 mr-2 rounded-full'
+        class='hidden sm:inline-block w-6 h-6 mr-1.5 rounded-full'
         draggable={false}
         loading='eager'
         format='webp'
       />
       <p class='text-sm text-gray-700 dark:text-gray-300'>
-        <span>{author} posts on</span>
+        <a
+          href='https://github.com/NekoChanTaiwan'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='text-gray-600 dark:text-gray-200'
+        >
+          NekoChan
+        </a>
+        <span>posts on</span>
         <time
           class='text-gray-600 dark:text-gray-200'
           datetime={dayjs(publishedAt).toISOString()}
