@@ -15,7 +15,7 @@ div[data-rehype-pretty-code-fragment] code {
 }
 
 div[data-rehype-pretty-code-fragment] .line {
-  @apply w-max rounded-r border-l-2 border-transparent pl-4 pr-2;
+  @apply w-max rounded-r border-l-2 border-transparent pl-2 pr-2 sm:pl-4;
 }
 
 div[data-rehype-pretty-code-fragment] .highlighted {
@@ -29,7 +29,7 @@ div[data-rehype-pretty-code-fragment] code[data-line-numbers] {
 div[data-rehype-pretty-code-fragment] code[data-line-numbers] > .line::before {
   counter-increment: line;
   content: counter(line);
-  @apply mr-8 inline-block w-4 text-right text-gray-300;
+  @apply mr-4 inline-block w-4 select-none text-right text-gray-300 sm:mr-6;
 }
 
 div[data-rehype-pretty-code-title][data-theme='light'] {
