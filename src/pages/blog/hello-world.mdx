@@ -9,40 +9,37 @@ updatedAt: 11-21-2022
 
 # Table of Contents
 
-# h2 Heading
+# Markdown Syntax
 
-## h3 Heading
+## Paragraphs
 
-### h4 Heading
+Lorem ipsum dolor sit amet, consectetur adipiscing elit 🤣, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id donec ultrices tincidunt arcu non sodales neque sodales. Adipiscing diam donec adipiscing tristique risus nec feugiat in.
 
-# Horizontal Rules
+## Line Break
 
----
+> auto line break by [`remark-breaks`](https://github.com/remarkjs/remark-breaks 'remarkjs/remark-breaks') .
 
-# Paragraphs
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit 🤣,
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit 🤣,
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Id donec ultrices tincidunt arcu non sodales neque sodales.
 Adipiscing diam donec adipiscing tristique risus nec feugiat in.
-At tempor commodo ullamcorper a.
-Elit eget gravida cum sociis natoque penatibus et. At elementum eu facilisis sed odio morbi quis.
-Amet porttitor eget dolor morbi non arcu. Tellus orci ac auctor augue mauris augue.
-Fames ac turpis egestas maecenas.
 
-# Emphasis
+## Emphasis
 
-**This is bold text**
+### Bold
 
-_This is italic text_
+Love **is** bold
 
-~~Strikethrough~~
+### Italic
 
-# Link
+A _cat_ meow
 
-Go to [Google].
+### Bold and Italic
 
-# Blockquotes
+> This is really **_very_** important text.
+
+## Blockquotes
 
 > Blockquotes can also be nested...
 >
@@ -50,9 +47,9 @@ Go to [Google].
 > >
 > > > ...or with spaces between arrows.
 
-# Lists
+## Lists
 
-Unordered
+### Unordered
 
 - Create a list by starting a line with `+`, `-`, or `*`
 - Sub-lists are made by indenting 2 spaces:
@@ -62,7 +59,7 @@ Unordered
     - Nulla volutpat aliquam velit
 - Very easy!
 
-Ordered
+### Ordered
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
@@ -73,17 +70,21 @@ Start numbering with offset:
 57. foo
 1. bar
 
-# Code
+## Code
+
+> Syntax highlighting by [`Rehype Pretty Code`](https://rehype-pretty-code.netlify.app/ "Rehype Pretty Code's documentation") .
+
+### Escaping Backticks
 
 Inline `code`
 
 This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
 
+### Code Blocks
+
 ```
 Sample text here...
 ```
-
-Syntax highlighting
 
 ```jsx title="Counter.tsx" showLineNumbers {4}
 import { createSignal } from 'solid-js'
@@ -103,62 +104,150 @@ export default function Counter() {
 }
 ```
 
-# Image
+## Horizontal Rules
 
-```
-https://i.pinimg.com/originals/f3/43/73/f343733b4bcb341c2faecfb62fe1d9ca.jpg
-```
+---
 
-https://i.pinimg.com/originals/f3/43/73/f343733b4bcb341c2faecfb62fe1d9ca.jpg
+## Link
 
-```
-@/images/hello-world/lulu.jpg
-```
+[YouTube](https://youtube.com)
 
-@/images/hello-world/lulu.jpg
+[Google]
 
-```md
-![](../../images/hello-world/lulu.jpg)
-```
+[google]: https://google.com
+
+### Adding Titles
+
+[YouTube](https://youtube.com 'Go to YouTube')
+
+## Image
+
+> Image compress by [`@astrojs/image`](https://docs.astro.build/en/guides/integrations-guide/image/ "@astrojs/image's guide") .
 
 ![a cat call Lulu](../../images/hello-world/lulu.jpg)
 
-# Component
+## Escaping Characters
 
-## Solid.js
+\* Without the backslash, this would be a bullet in an unordered list.
+
+# JSX Syntax
+
+## Import Components
 
 import Counter from '@/components/MDX/Counter'
 
 <Counter client:visible />
 
+# Plugins
+
+<Collapse header='All plugins list'>
+
+- remark
+  - [remark-breaks](https://github.com/remarkjs/remark-breaks)
+  - [remark-behead](https://github.com/mrzmmr/remark-behead)
+  - [remark-gfm](https://github.com/remarkjs/remark-gfm)
+  - [remark-smartypants](https://github.com/silvenon/remark-smartypants)
+  - [remark-images](https://github.com/remarkjs/remark-images)
+  - [remark-m2dx](https://astro-m2dx.netlify.app/)
+  - [remark-toc](https://github.com/remarkjs/remark-toc)
+  - [remark-route-slug](https://github.com/NekoChanTaiwan/astro-blog/blob/master/src/plugins/remark-route-slug.ts)
+  - [remark-reading-time](https://github.com/NekoChanTaiwan/astro-blog/blob/master/src/plugins/remark-reading-time.ts)
+- rehype
+  - [rehype-pretty-code](https://rehype-pretty-code.netlify.app/)
+  - [rehype-twemoji](https://github.com/cliid/rehype-twemojify)
+
+</Collapse>
+
+## remark-gfm
+
+### Autolink literals
+
+www.example.com, https://example.com, and contact@example.com
+
+### Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+### Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+### Table
+
+| First Header   | Second Header  |
+| -------------- | -------------- |
+| Content Cell 1 | Content Cell 1 |
+| Content Cell 2 | Content Cell 2 |
+| Content Cell 3 | Content Cell 3 |
+| Content Cell 4 | Content Cell 4 |
+
+### Tasklist
+
+- [ ] to do
+- [x] done
+
+## remark-smartypants
+
+Straight quotes: "Isn't this fun?"
+
+Backticks-style quotes: `Isn't this fun?`
+
+Dashes: "isn't--this--fun?"
+
+Three consecutive dots: "isn't...this...fun?"
+
+## remark-images
+
+```mdx
+https://i.pinimg.com/originals/f3/43/73/f343733b4bcb341c2faecfb62fe1d9ca.jpg
+```
+
+https://i.pinimg.com/originals/f3/43/73/f343733b4bcb341c2faecfb62fe1d9ca.jpg
+
+```mdx
+@/images/hello-world/lulu.jpg
+```
+
+@/images/hello-world/lulu.jpg
+
+## remark-M²DX - Auto-imports
+
 ### Collapse
 
 <Collapse header='Try to click me!'>Now you see me 😺</Collapse>
 
-## Callout
+### Callout
 
 <Callout>Information</Callout>
+
 <Callout type='success'>Success</Callout>
+
 <Callout type='warning'>Warning</Callout>
+
 <Callout type='error'>Error</Callout>
+
 <Callout type='success' header='Lorem ipsum'>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Id donec ultrices tincidunt arcu non sodales neque sodales.
 </Callout>
 
-## Bookmark
+### Bookmark
 
 <Bookmark src='https://neko-astro-blog.vercel.app/post/hello-world' />
+
 <Bookmark src='https://github.com/NekoChanTaiwan' />
+
 <Bookmark src='https://github.com/NekoChanTaiwan/astro-blog' />
 
-## Spoiler
+### Spoiler
 
 Lorem ipsum dolor <Spoiler>&nbsp;What are you looking for ?&nbsp;</Spoiler> sit amet.
 
 <Spoiler>![a cat call Lulu](../../images/hello-world/lulu.jpg)</Spoiler>
 
-## Step
+### Step
 
 <Step number='1'>Lorem</Step>
 
@@ -172,54 +261,10 @@ Lorem ipsum dolor sit amet.
 
 Lorem ipsum dolor sit amet.
 
-# GitHub-flavored Markdown
-
-## Autolink literals
-
-www.example.com, https://example.com, and contact@example.com
-
-## Footnote
-
-A note[^1]
-
-[^1]: Big note.
-
-## Strikethrough
-
-~one~ or ~~two~~ tildes.
-
-## Table
-
-| First Header   | Second Header  |
-| -------------- | -------------- |
-| Content Cell 1 | Content Cell 1 |
-| Content Cell 2 | Content Cell 2 |
-| Content Cell 3 | Content Cell 3 |
-| Content Cell 4 | Content Cell 4 |
-
-## Tasklist
-
-- [ ] to do
-- [x] done
-
-# Smartypants
-
-Straight quotes: "Isn't this fun?"
-
-Backticks-style quotes: `Isn't this fun?`
-
-Dashes: "isn't--this--fun?"
-
-Three consecutive dots: "isn't...this...fun?"
-
-# Twemoji
-
-😀 😃 😄 😁 😆 😅 😂 🤣 🥲 🥹 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🫣 🤗 🫡 🤔 🫢 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 🫠 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🫥 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
-
-## Twemoji component
+### Twemoji
 
 <Twemoji emoji='❤️' />
 
-{/* Links */}
+## rehype-twemoji
 
-[google]: https://google.com
+😀 😃 😄 😁 😆 😅 😂 🤣 🥲 🥹 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🫣 🤗 🫡 🤔 🫢 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 🫠 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🫥 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
