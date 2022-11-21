@@ -11,7 +11,6 @@ import compress from 'astro-compress'
 import remarkBreaks from 'remark-breaks'
 import remarkBehead from 'remark-behead'
 import remarkImages from './src/plugins/remark-images'
-import remarkUnwrapImages from 'remark-unwrap-images'
 import remarM2dx from 'astro-m2dx'
 import remarkToc from './src/plugins/remark-toc'
 import remarkRouteSlug from './src/plugins/remark-route-slug'
@@ -28,10 +27,12 @@ import type { Options as CompressOptions } from 'astro-compress/dist/options'
 
 // https://astro-m2dx.netlify.app/
 const remarM2dxOptions: M2dxOptions = {
-  frontmatter: true,
-  exportComponents: true,
   autoImports: true,
+  exportComponents: true,
+  frontmatter: true,
+  rawmdx: true,
   relativeImages: true,
+  unwrapImages: true,
 }
 
 const remarkTocOptions: RemarkTocOptions = {
@@ -62,7 +63,6 @@ const mdxOptions: MdxOptions = {
     remarkBreaks,
     [remarkBehead, { minDepth: 2 }],
     remarkImages,
-    remarkUnwrapImages,
     [remarM2dx, remarM2dxOptions],
     [remarkToc, remarkTocOptions],
     remarkRouteSlug,

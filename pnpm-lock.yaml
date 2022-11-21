@@ -16,7 +16,7 @@ specifiers:
   '@types/mdast': ^3.0.10
   astro: ^1.6.10
   astro-compress: ^1.1.7
-  astro-m2dx: 0.7.7
+  astro-m2dx: 0.7.11
   astro-robots-txt: ^0.3.10
   class-variance-authority: ^0.3.0
   clsx: ^1.2.1
@@ -34,7 +34,6 @@ specifiers:
   rehype-twemojify: ^3.1.0
   remark-behead: ^3.1.0
   remark-breaks: ^3.0.2
-  remark-unwrap-images: ^3.0.1
   sharp: ^0.31.2
   solid-js: ^1.6.2
   string-replace-to-array: ^2.1.0
@@ -60,7 +59,7 @@ dependencies:
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   astro: 1.6.10
   astro-compress: 1.1.7
-  astro-m2dx: 0.7.7
+  astro-m2dx: 0.7.11
   astro-robots-txt: 0.3.10
   class-variance-authority: 0.3.0
   clsx: 1.2.1
@@ -73,7 +72,6 @@ dependencies:
   rehype-twemojify: 3.1.0
   remark-behead: 3.1.0
   remark-breaks: 3.0.2
-  remark-unwrap-images: 3.0.1
   solid-js: 1.6.2
   tailwind-merge: 1.8.0
   tailwindcss: 3.2.4
@@ -1030,14 +1028,14 @@ packages:
       terser: 5.15.1
     dev: false
 
-  /astro-m2dx/0.7.7:
-    resolution: {integrity: sha512-EVsO3OMS0gy5jbEUEfvEW2AIB8w6Zn8lcfpqAqGCDWjtL3knHfNG/PHcg+JmIOdU3ir13b9uVGhMExm6OfR5WQ==}
+  /astro-m2dx/0.7.11:
+    resolution: {integrity: sha512-wLyus4Ad+T0GVqyDlOGF9PAXGB8aGypmog8DS/d0axBYM9zeIX/7miZNIxOO+QTg88ynwpFpt7mh4GbzZXf0/Q==}
     dependencies:
       acorn: 8.8.1
       estree-util-visit: 1.2.0
       gray-matter: 4.0.3
       js-yaml: 4.1.0
-      m2dx-utils: 0.2.0
+      m2dx-utils: 0.2.3
       mdast-util-mdx: 2.0.0
       remark: 14.0.2
       remark-directive: 2.0.1
@@ -1139,7 +1137,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001431
+      caniuse-lite: 1.0.30001434
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1226,7 +1224,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001431
+      caniuse-lite: 1.0.30001434
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -1284,8 +1282,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /caniuse-lite/1.0.30001431:
-    resolution: {integrity: sha512-zBUoFU0ZcxpvSt9IU66dXVT/3ctO1cy4y9cscs1szkPlcWb6pasYM144GqrUygUbT+k7cmUCW61cvskjcv0enQ==}
+  /caniuse-lite/1.0.30001434:
+    resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==}
     dev: false
 
   /ccount/2.0.1:
@@ -2995,8 +2993,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /m2dx-utils/0.2.0:
-    resolution: {integrity: sha512-WiOmdpzifA9Pnb3/uk5DvfHfqKrNdA2R3dnAMZxUqChZ+tBzzDye9uCJYIkTpzpte+pD2Aocu1ChzRGepejzAg==}
+  /m2dx-utils/0.2.3:
+    resolution: {integrity: sha512-wEIPaHW9hnhPx1QvZJBPIjZkmq1YCTxKmi8MhlBWxrw8PpAT7C9hXqLyCosZDjgnt5gNuH1JsDE07b4R/t1lGA==}
     dependencies:
       acorn: 8.8.1
       estree-util-visit: 1.2.0
@@ -4319,15 +4317,6 @@ packages:
       '@types/mdast': 3.0.10
       mdast-util-to-markdown: 1.3.0
       unified: 10.1.2
-    dev: false
-
-  /remark-unwrap-images/3.0.1:
-    resolution: {integrity: sha512-5VUY0n+J9lPTPfkct5S3/SbutryBjp8J/4mbgtlkDrOk3h8jde0hyqdYUJOoJKherZezS08tjd6i4+nnQ+wl5w==}
-    dependencies:
-      '@types/mdast': 3.0.10
-      hast-util-whitespace: 2.0.0
-      unified: 10.1.2
-      unist-util-visit: 4.1.1
     dev: false
 
   /remark/14.0.2:
