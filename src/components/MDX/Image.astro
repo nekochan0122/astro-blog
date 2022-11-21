@@ -4,21 +4,29 @@ import { Image } from '@astrojs/image/components'
 import { cx } from '@/lib/utils'
 import type { Props } from '@astrojs/image/components/Image.astro'
 
-const { src, draggable = 'false', format = 'webp', ...props } = Astro.props as Props
+const {
+  src,
+  draggable = 'false',
+  loading = 'lazy',
+  decoding = 'async',
+  format = 'webp',
+  ...props
+} = Astro.props as Props
+
 const EmojiRegex = emojiRegex()
 ---
 
 {
   EmojiRegex.test(props.alt) ? (
     // Twemoji
-    <img src={src} draggable={draggable} loading='lazy' decoding='async' {...props} />
+    <img src={src} draggable={draggable} loading={loading} decoding={decoding} {...props} />
   ) : !src?.width || !src?.height ? (
     // Remote image
     <img
       src={src}
       draggable={draggable}
-      loading='lazy'
-      decoding='async'
+      loading={loading}
+      decoding={decoding}
       class={cx('mx-auto w-full rounded-md', props.class)}
       {...props}
     />
@@ -28,6 +36,8 @@ const EmojiRegex = emojiRegex()
       {src}
       draggable={draggable}
       format={format}
+      loading={loading}
+      decoding={decoding}
       class={cx('mx-auto w-full rounded-md', props.class)}
       {...props}
     />
