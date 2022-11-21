@@ -7,7 +7,7 @@ div[data-rehype-pretty-code-title] {
 }
 
 div[data-rehype-pretty-code-fragment] pre {
-  @apply m-0 border-2 border-gray-200 bg-transparent px-0 dark:border-gray-700;
+  @apply mt-0;
 }
 
 div[data-rehype-pretty-code-fragment] code {
