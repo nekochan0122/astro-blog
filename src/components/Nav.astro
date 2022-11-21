@@ -22,7 +22,7 @@ const items = [
           target={target}
           class={cx(
             'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors',
-            Astro.url.pathname === url
+            Astro.url.pathname.split('/')[1] === url.replaceAll('/', '')
               ? 'text-gray-800 dark:text-gray-200 font-bold'
               : 'text-gray-500 dark:text-gray-300'
           )}
