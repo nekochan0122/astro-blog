@@ -52,7 +52,6 @@ const compressOptions: CompressOptions = {
 export default defineConfig({
   site: 'https://neko-astro-blog.vercel.app',
   markdown: {
-    drafts: true,
     syntaxHighlight: 'shiki',
     shikiConfig: {
       theme: 'one-dark-pro',
