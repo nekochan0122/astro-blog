@@ -9,7 +9,6 @@ specifiers:
   '@astrojs/solid-js': ^1.2.3
   '@astrojs/tailwind': ^2.1.2
   '@fontsource/fira-code': ^4.5.12
-  '@fontsource/inter': ^4.5.14
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.8
   '@types/hast': ^2.3.4
@@ -49,7 +48,6 @@ dependencies:
   '@astrojs/solid-js': 1.2.3_solid-js@1.6.2
   '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
   '@fontsource/fira-code': 4.5.12
-  '@fontsource/inter': 4.5.14
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@types/hast': 2.3.4
@@ -571,10 +569,6 @@ packages:
 
   /@fontsource/fira-code/4.5.12:
     resolution: {integrity: sha512-dAVGsgiVR6jslpuXosHH4/Jf8bsAIKL1RWqjVq4WpmxL7CFHfg9hT5bAv/Y3xsEj8kDTibEgpuC3eMfr9kb02g==}
-    dev: false
-
-  /@fontsource/inter/4.5.14:
-    resolution: {integrity: sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==}
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:

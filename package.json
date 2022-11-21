@@ -21,7 +21,6 @@
     "@astrojs/solid-js": "^1.2.3",
     "@astrojs/tailwind": "^2.1.2",
     "@fontsource/fira-code": "^4.5.12",
-    "@fontsource/inter": "^4.5.14",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "@types/hast": "^2.3.4",
