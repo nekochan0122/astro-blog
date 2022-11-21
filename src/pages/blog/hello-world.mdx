@@ -68,7 +68,7 @@ Start numbering with offset:
 
 Inline `code`
 
-Block code "fences"
+This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
 
 ```
 Sample text here...
@@ -76,12 +76,22 @@ Sample text here...
 
 Syntax highlighting
 
-```ts
-const foo = (bar: number) => {
-  return bar++
-}
+```jsx title="Counter.tsx" showLineNumbers {4}
+import { createSignal } from 'solid-js'
 
-console.log(foo(5))
+export default function Counter() {
+  const [count, setCount] = createSignal(0)
+
+  const add = () => setCount((i) => i + 1)
+
+  return (
+    <div class='flex gap-x-4'>
+      <button type='button' onClick={add}>
+        the count is {count()}
+      </button>
+    </div>
+  )
+}
 ```
 
 # Image

@@ -3,8 +3,10 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import BaseLayout from './BaseLayout.astro'
 import Giscus from '@/components/Giscus.astro'
+import { cx } from '@/lib/utils'
 import type { MarkdownLayoutProps } from 'astro'
 import type { Frontmatter } from '@/types'
+import '@/styles/syntaxHighlight.css'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
@@ -47,7 +49,12 @@ dayjs.extend(relativeTime)
     <p class='text-sm text-gray-600 dark:text-gray-300 min-w-32 md:mt-0'>{minutesRead}</p>
   </div>
   <article
-    class='prose lg:prose-xl prose-hr:transition-colors prose-hr:duration-300 mx-auto dark:prose-invert max-w-none w-full'
+    class={cx(
+      'prose lg:prose-xl dark:prose-invert max-w-none w-full mx-auto',
+      'prose-hr:transition-colors prose-hr:duration-300',
+      'prose-pre:border-2 prose-pre:border-gray-200 dark:prose-pre:border-gray-700',
+      'prose-pre:text-gray-900 dark:prose-pre:text-gray-200'
+    )}
   >
     <slot />
   </article>
