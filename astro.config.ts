@@ -11,7 +11,7 @@ import compress from 'astro-compress'
 import remarkBreaks from 'remark-breaks'
 import remarkBehead from 'remark-behead'
 import remarkImages from './src/plugins/remark-images'
-import remarM2dx from 'astro-m2dx'
+import remarkM2dx from 'astro-m2dx'
 import remarkToc from './src/plugins/remark-toc'
 import remarkRouteSlug from './src/plugins/remark-route-slug'
 import remarkReadingTime from './src/plugins/remark-reading-time'
@@ -63,7 +63,7 @@ const mdxOptions: MdxOptions = {
     remarkBreaks,
     [remarkBehead, { minDepth: 2 }],
     remarkImages,
-    [remarM2dx, remarM2dxOptions],
+    [remarkM2dx, remarM2dxOptions],
     [remarkToc, remarkTocOptions],
     remarkRouteSlug,
     remarkReadingTime,
