@@ -39,6 +39,7 @@
     "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.5.0",
     "rehype-twemojify": "^3.1.0",
+    "remark-unwrap-images": "^3.0.1",
     "sharp": "^0.31.2",
     "solid-js": "^1.6.2",
     "string-replace-to-array": "^2.1.0",
