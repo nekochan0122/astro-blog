@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import BaseLayout from './BaseLayout.astro'
@@ -6,6 +7,7 @@ import Giscus from '@/components/Giscus.astro'
 import { cx } from '@/lib/utils'
 import type { MarkdownLayoutProps } from 'astro'
 import type { Frontmatter } from '@/types'
+import avatar from '@/images/81856932_p0_400x400.jpg'
 import '@/styles/syntaxHighlight.css'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
@@ -19,6 +21,14 @@ dayjs.extend(relativeTime)
   <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{title}</h1>
   <div class='flex flex-col items-start justify-between w-full mb-4 md:flex-row md:items-center'>
     <div class='flex items-center'>
+      <Image
+        src={avatar}
+        alt='NekoChan'
+        class='w-6 h-6 mr-2 rounded-full'
+        draggable={false}
+        loading='eager'
+        format='webp'
+      />
       <p class='text-sm text-gray-700 dark:text-gray-300'>
         <span>{author} posts on</span>
         <time
