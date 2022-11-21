@@ -19,11 +19,12 @@ const items = [
       items.map(({ name, url, target }) => (
         <a
           href={url}
+          target={target}
           class={cx(
             'inline-block px-3 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors',
             Astro.url.pathname === url ? 'text-gray-800 dark:text-gray-200 font-bold' : 'text-gray-300'
           )}
-          {...(url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : { target, rel: 'prefetch' })}
+          {...(url.startsWith('http') ? { rel: 'noopener noreferrer' } : { rel: 'prefetch' })}
         >
           {name}
         </a>
