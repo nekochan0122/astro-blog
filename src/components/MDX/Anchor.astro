@@ -1,6 +1,5 @@
 ---
 import FootnoteBackref from './icons/FootnoteBackref.astro'
-import { cx } from '@/lib/utils'
 
 interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
   href: string
@@ -10,12 +9,7 @@ const { href } = Astro.props
 ---
 
 <a
-  class={cx(
-    'relative no-underline',
-    Astro.props['data-footnote-ref'] === undefined &&
-      Astro.props['data-footnote-backref'] === undefined &&
-      'after:hover:scale-100 after:transition-transform after:origin-left after:scale-0 after:absolute after:bottom-[1px] after:left-0 after:w-full after:bg-blue-600 after:h-[2px] after:duration-300'
-  )}
+  class='no-underline'
   {...(!href.startsWith('#') && { target: '_blank', rel: 'noopener noreferrer' })}
   {...Astro.props}
 >
