@@ -36,6 +36,7 @@
     "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.5.0",
     "rehype-twemojify": "^3.1.0",
+    "remark-behead": "^3.1.0",
     "remark-unwrap-images": "^3.0.1",
     "solid-js": "^1.6.2",
     "tailwind-merge": "^1.8.0",
