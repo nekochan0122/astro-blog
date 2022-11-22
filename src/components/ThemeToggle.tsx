@@ -33,7 +33,7 @@ export default function ThemeToggle() {
   return (
     <button
       type='button'
-      class='flex h-9 w-9 shrink-0 touch-manipulation items-center justify-center rounded-lg bg-gray-200 ring-gray-300 transition-[background-color] hover:ring-2 dark:bg-gray-600'
+      class='flex h-9 w-9 shrink-0 touch-manipulation items-center justify-center rounded-md bg-gray-200 ring-gray-300 transition-all hover:ring-2 dark:bg-gray-600'
       onClick={handleClick}
       title='Toggle theme'
     >
