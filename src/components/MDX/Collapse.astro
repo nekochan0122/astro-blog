@@ -3,6 +3,6 @@ import Collapse from './Collapse'
 import type { CollapseProps } from './Collapse'
 ---
 
-<Collapse client:only='solid-js' {...Astro.props as CollapseProps}>
+<Collapse client:visible {...Astro.props as CollapseProps}>
   <slot />
 </Collapse>

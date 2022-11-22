@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
 import type { Frontmatter } from '@/types'
 
-const posts = await Astro.glob<Frontmatter>('../../content/blog/*.mdx')
+const posts = await Astro.glob<Frontmatter>('./blog/*.mdx')
 const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
 ---
 
