@@ -9,6 +9,7 @@ specifiers:
   '@astrojs/solid-js': ^1.2.3
   '@astrojs/tailwind': ^2.1.2
   '@fontsource/fira-code': ^4.5.12
+  '@fontsource/inter': ^4.5.14
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.8
   '@types/hast': ^2.3.4
@@ -18,6 +19,7 @@ specifiers:
   astro-compress: ^1.1.7
   astro-m2dx: 0.7.11
   astro-robots-txt: ^0.3.10
+  autoprefixer: ^10.4.13
   class-variance-authority: ^0.3.0
   clsx: ^1.2.1
   dayjs: ^1.11.6
@@ -58,12 +60,14 @@ dependencies:
   '@astrojs/solid-js': 1.2.3_solid-js@1.6.2
   '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
   '@fontsource/fira-code': 4.5.12
+  '@fontsource/inter': 4.5.14
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   astro: 1.6.10
   astro-compress: 1.1.7
   astro-m2dx: 0.7.11
   astro-robots-txt: 0.3.10
+  autoprefixer: 10.4.13
   class-variance-authority: 0.3.0
   clsx: 1.2.1
   dayjs: 1.11.6
@@ -589,6 +593,10 @@ packages:
 
   /@fontsource/fira-code/4.5.12:
     resolution: {integrity: sha512-dAVGsgiVR6jslpuXosHH4/Jf8bsAIKL1RWqjVq4WpmxL7CFHfg9hT5bAv/Y3xsEj8kDTibEgpuC3eMfr9kb02g==}
+    dev: false
+
+  /@fontsource/inter/4.5.14:
+    resolution: {integrity: sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==}
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -1137,6 +1145,21 @@ packages:
       - supports-color
       - terser
       - ts-node
+    dev: false
+
+  /autoprefixer/10.4.13:
+    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.21.4
+      caniuse-lite: 1.0.30001434
+      fraction.js: 4.2.0
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss-value-parser: 4.2.0
     dev: false
 
   /autoprefixer/10.4.13_postcss@8.4.19:

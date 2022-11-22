@@ -1,4 +1,7 @@
 ---
+import inter from '@fontsource/inter/files/inter-latin-400-normal.woff2'
+import firacode from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2'
+import '@fontsource/inter'
 import '@fontsource/fira-code'
 import 'katex/dist/katex.min.css'
 
@@ -41,3 +44,6 @@ const { title, description } = Astro.props as BaseHeadProps
   document.documentElement.setAttribute('data-theme', theme)
   window.localStorage.setItem('theme', theme)
 </script>
+
+<link rel='preload' as='font' href={inter} type='font/woff2' />
+<link rel='preload' as='font' href={firacode} type='font/woff2' />
