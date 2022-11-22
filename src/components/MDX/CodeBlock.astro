@@ -1,0 +1,10 @@
+---
+import CodeBlock from './CodeBlock'
+import type { JSX } from 'solid-js'
+
+interface Props extends JSX.HTMLAttributes<HTMLPreElement> {}
+---
+
+<CodeBlock client:visible {...Astro.props}>
+  <slot />
+</CodeBlock>
