@@ -31,7 +31,7 @@ export default function CodeBlock({ children, ...rest }: JSX.HTMLAttributes<HTML
           type='button'
           title='Copy to clipboard'
           class={cx(
-            'absolute top-4 right-4 flex h-9 w-9 touch-manipulation items-center justify-center rounded-md bg-gray-200 text-gray-800 opacity-0 ring-gray-300 transition-all hover:ring-2 group-hover:opacity-100 dark:bg-gray-600 dark:text-gray-200',
+            'absolute top-2 right-2 flex h-9 w-9 touch-manipulation items-center justify-center rounded-md bg-gray-200 text-gray-800 opacity-0 ring-gray-300 transition-all hover:ring-2 group-hover:opacity-100 dark:bg-gray-600 dark:text-gray-200 lg:top-4 lg:right-4',
             copied() && 'text-green-400 ring-2 ring-green-400 dark:text-green-600 dark:ring-green-700'
           )}
           onClick={copyToClipboard}
