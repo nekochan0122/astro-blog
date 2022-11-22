@@ -1,37 +1,34 @@
 ---
 import emojiRegex from 'emoji-regex'
+import probe from 'probe-image-size'
 import { Image } from '@astrojs/image/components'
 import { cx } from '@/lib/utils'
 import type { Props } from '@astrojs/image/components/Image.astro'
 
-const {
-  src,
-  draggable = 'false',
-  loading = 'lazy',
-  decoding = 'async',
-  format = 'webp',
-  ...props
-} = Astro.props as Props
+let { src, draggable = 'false', loading = 'lazy', decoding = 'async', format = 'webp', ...props } = Astro.props as Props
 
 const EmojiRegex = emojiRegex()
+const isRemote = typeof src === 'string' && src.startsWith('http')
+const isEmoji = EmojiRegex.test(props.alt)
+
+if (isRemote && !isEmoji) {
+  const url = src
+  const { width, height, type } = await probe(url)
+
+  src = {
+    src: url,
+    width,
+    height,
+    format: type,
+  }
+}
 ---
 
 {
-  EmojiRegex.test(props.alt) ? (
+  isEmoji ? (
     // Twemoji
     <img src={src} draggable={draggable} loading={loading} decoding={decoding} {...props} />
-  ) : !src?.width || !src?.height ? (
-    // Remote image
-    <img
-      src={src}
-      draggable={draggable}
-      loading={loading}
-      decoding={decoding}
-      class={cx('mx-auto w-full rounded-md', props.class)}
-      {...props}
-    />
   ) : (
-    // Local image
     <Image
       {src}
       draggable={draggable}
