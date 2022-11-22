@@ -38,7 +38,7 @@ export default function remarkImages(): Plugin {
           }
         }
 
-        const url = value.startsWith('@/') ? value.replace('@/', '../../') : value
+        const url = value.startsWith('@/') ? value.replace('@/', '../') : value
 
         const image: Image = {
           type: 'image',

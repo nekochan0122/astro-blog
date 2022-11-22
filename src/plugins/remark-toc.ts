@@ -6,7 +6,7 @@ import type { Options } from 'mdast-util-toc'
 
 export type RemarkTocOptions = Options
 
-const hash = shortHash(resolve(process.cwd(), 'src/_autoimports.ts'))
+const hash = shortHash(resolve(process.cwd(), 'src/content/_autoimports.ts'))
 
 const remarkToc: Plugin = (options: Options = {}) => {
   return (node: any) => {

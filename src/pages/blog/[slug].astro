@@ -1,0 +1,21 @@
+---
+import type { Frontmatter } from '@/types'
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob<Frontmatter>('../../content/blog/*.mdx')
+  const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
+
+  return nonDraftPosts.map((mdx) => ({
+    params: {
+      slug: mdx.frontmatter.slug,
+    },
+    props: {
+      mdx,
+    },
+  }))
+}
+
+const { Content, components } = Astro.props.mdx
+---
+
+<Content components={components} />
