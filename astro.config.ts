@@ -8,6 +8,7 @@ import solidJs from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
 import image from '@astrojs/image'
 import compress from 'astro-compress'
+import remarkMath from 'remark-math'
 import remarkBreaks from 'remark-breaks'
 import remarkBehead from 'remark-behead'
 import remarkImages from './src/plugins/remark-images'
@@ -16,6 +17,7 @@ import remarkToc from './src/plugins/remark-toc'
 import remarkRouteSlug from './src/plugins/remark-route-slug'
 import remarkReadingTime from './src/plugins/remark-reading-time'
 import remarkDebug from './src/plugins/remark-debug'
+import rehypeKatex from 'rehype-katex'
 import rehypeTwemoji from './src/plugins/rehype-twemoji'
 import rehypePrettyCode from 'rehype-pretty-code'
 import type { Options as PrettyCodeOptions } from 'rehype-pretty-code'
@@ -60,6 +62,7 @@ const prettyCodeOptions: PrettyCodeOptions = {
 
 const mdxOptions: MdxOptions = {
   remarkPlugins: [
+    remarkMath,
     remarkBreaks,
     [remarkBehead, { minDepth: 2 }],
     remarkImages,
@@ -69,7 +72,7 @@ const mdxOptions: MdxOptions = {
     remarkReadingTime,
     remarkDebug,
   ],
-  rehypePlugins: [rehypeTwemoji, [rehypePrettyCode, prettyCodeOptions]],
+  rehypePlugins: [rehypeKatex, rehypeTwemoji, [rehypePrettyCode, prettyCodeOptions]],
   extendPlugins: 'astroDefaults', // remark-gfm, remark-smartypants
 }
 
