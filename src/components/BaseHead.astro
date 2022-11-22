@@ -45,5 +45,5 @@ const { title, description } = Astro.props as BaseHeadProps
   window.localStorage.setItem('theme', theme)
 </script>
 
-<link rel='preload' as='font' href={inter} type='font/woff2' />
-<link rel='preload' as='font' href={firacode} type='font/woff2' />
+<link rel='preload' as='font' href={inter} type='font/woff2' crossorigin='anonymous' />
+<link rel='preload' as='font' href={firacode} type='font/woff2' crossorigin='anonymous' />
