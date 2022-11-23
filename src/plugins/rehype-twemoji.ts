@@ -18,7 +18,7 @@ interface UserOptions {
 
 const options: UserOptions = {
   exclude: [],
-  className: 'not-prose inline-block align-text-bottom',
+  className: 'not-prose inline-block align-text-bottom mx-[1px]',
   twemoji: {
     baseUrl: 'https://twemoji.maxcdn.com/v/latest',
     size: '72x72',
