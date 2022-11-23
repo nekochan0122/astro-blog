@@ -18,7 +18,7 @@ interface UserOptions {
 
 const options: UserOptions = {
   exclude: [],
-  className: 'not-prose inline-block h-8 w-8 mx-[1px] align-text-bottom',
+  className: 'not-prose inline-block align-text-bottom',
   twemoji: {
     baseUrl: 'https://twemoji.maxcdn.com/v/latest',
     size: '72x72',
@@ -70,7 +70,7 @@ function makeTransformer(options: UserOptions): Transformer<Root, Root> {
                   }
                 : {
                     type: 'element',
-                    tagName: 'i',
+                    tagName: 'span',
                     properties: {
                       className: [options.className],
                     },

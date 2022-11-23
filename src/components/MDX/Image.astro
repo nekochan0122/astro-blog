@@ -5,7 +5,14 @@ import { Image } from '@astrojs/image/components'
 import { cx } from '@/lib/utils'
 import type { Props } from '@astrojs/image/components/Image.astro'
 
-let { src, draggable = 'false', loading = 'lazy', decoding = 'async', format = 'webp', ...props } = Astro.props as Props
+let {
+  src,
+  draggable = 'false',
+  loading = 'lazy',
+  decoding = 'async',
+  format = 'webp',
+  ...props
+} = Astro.props as Props
 
 const EmojiRegex = emojiRegex()
 const isRemote = typeof src === 'string' && src.startsWith('http')
@@ -27,7 +34,14 @@ if (isRemote && !isEmoji) {
 {
   isEmoji ? (
     // Twemoji
-    <img src={src} draggable={draggable} loading={loading} decoding={decoding} {...props} />
+    <img
+      src={src}
+      draggable={draggable}
+      loading={loading}
+      decoding={decoding}
+      class='w-[1.375em] h-[1.375em]'
+      {...props}
+    />
   ) : (
     <Image
       {src}

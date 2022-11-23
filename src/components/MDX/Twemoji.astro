@@ -12,12 +12,13 @@ const codePoint = twemoji.convert.toCodePoint(
 )
 ---
 
-<i class='not-prose inline-block h-8 w-8 mx-[1px] align-text-bottom'>
+<span class='not-prose inline-block align-text-bottom'>
   <img
+    class='w-[1.375em] h-[1.375em]'
     src={`https://twemoji.maxcdn.com/v/latest/72x72/${codePoint}.png`}
     alt={emoji}
     draggable={false}
     width='72'
     height='72'
   />
-</i>
+</span>
