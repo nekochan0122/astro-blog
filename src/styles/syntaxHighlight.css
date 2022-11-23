@@ -3,7 +3,11 @@
 }
 
 div[data-rehype-pretty-code-fragment] {
-  @apply relative my-9 w-full rounded-md border-2 border-gray-200 pt-8 dark:border-gray-700 lg:pt-10;
+  @apply relative my-9 w-full rounded-md border-2 border-gray-200 dark:border-gray-700;
+}
+
+div[data-rehype-pretty-code-fragment]:has([data-rehype-pretty-code-title]) {
+  @apply pt-8 lg:pt-10;
 }
 
 div[data-rehype-pretty-code-title] {
