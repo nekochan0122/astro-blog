@@ -44,6 +44,7 @@
     "remark-behead": "^3.1.0",
     "remark-breaks": "^3.0.2",
     "remark-math": "^5.1.1",
+    "shiki": "^0.11.1",
     "solid-js": "^1.6.2",
     "tailwind-merge": "^1.8.0",
     "tailwindcss": "^3.2.4",

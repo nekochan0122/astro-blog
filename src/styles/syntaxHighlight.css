@@ -3,15 +3,15 @@
 }
 
 div[data-rehype-pretty-code-fragment] {
-  @apply relative w-full rounded-t;
+  @apply relative my-9 w-full rounded-md border-2 border-gray-200 pt-8 dark:border-gray-700 lg:pt-10;
 }
 
 div[data-rehype-pretty-code-title] {
-  @apply translate-y-[2px] rounded bg-gray-200 px-4 py-2 text-sm text-blue-400 dark:bg-gray-700;
+  @apply absolute top-0 left-0 w-full rounded bg-gray-200 py-1 px-2 text-sm text-blue-400 dark:bg-gray-700 lg:px-4 lg:py-2;
 }
 
 div[data-rehype-pretty-code-fragment] pre {
-  @apply mt-0 px-0;
+  @apply my-0 border-none px-0;
 }
 
 div[data-rehype-pretty-code-fragment] code {
