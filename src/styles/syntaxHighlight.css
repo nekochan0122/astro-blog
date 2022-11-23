@@ -7,7 +7,7 @@ div[data-rehype-pretty-code-fragment] {
 }
 
 div[data-rehype-pretty-code-fragment]:has([data-rehype-pretty-code-title]) {
-  @apply pt-8 lg:pt-10;
+  @apply pt-7 lg:pt-10;
 }
 
 div[data-rehype-pretty-code-title] {
