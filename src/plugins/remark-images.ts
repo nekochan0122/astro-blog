@@ -5,7 +5,10 @@ import type { Image } from 'mdast'
 import type { Plugin } from 'unified'
 
 const isImgPath = (value: string) =>
-  value.startsWith('/') || value.startsWith('./') || value.startsWith('../') || value.startsWith('@/')
+  value.startsWith('/') ||
+  value.startsWith('./') ||
+  value.startsWith('../') ||
+  value.startsWith('@/')
 
 /**
  * Extensions recognized as images by default

@@ -25,7 +25,10 @@ export default function ThemeToggle() {
     // Giscus
     const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')
     if (!iframe?.contentWindow) return
-    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme() } } }, 'https://giscus.app')
+    iframe.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: theme() } } },
+      'https://giscus.app'
+    )
   })
 
   onMount(() => setMounted(true))

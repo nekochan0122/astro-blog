@@ -61,36 +61,37 @@ function makeTransformer(options: UserOptions): Transformer<Root, Root> {
             return node
           }
 
-          const children = replaceToArray(node.value, EmojiRegex, (text) => ({ emoji: text })).map((segment) =>
-            typeof segment === 'string'
-              ? {
-                  type: 'text',
-                  value: segment,
-                }
-              : {
-                  type: 'element',
-                  tagName: 'i',
-                  properties: {
-                    className: [options.className],
-                  },
-                  children: [
-                    {
-                      type: 'element',
-                      tagName: 'img',
-                      properties: {
-                        src: toUrl(segment.emoji, options),
-                        alt: segment.emoji,
-                        width: '72',
-                        height: '72',
-                        loading: 'lazy',
-                        decoding: 'async',
-                        draggable: 'false',
-                        'data-emoji': segment.emoji,
-                      },
-                      children: [],
+          const children = replaceToArray(node.value, EmojiRegex, (text) => ({ emoji: text })).map(
+            (segment) =>
+              typeof segment === 'string'
+                ? {
+                    type: 'text',
+                    value: segment,
+                  }
+                : {
+                    type: 'element',
+                    tagName: 'i',
+                    properties: {
+                      className: [options.className],
                     },
-                  ],
-                }
+                    children: [
+                      {
+                        type: 'element',
+                        tagName: 'img',
+                        properties: {
+                          src: toUrl(segment.emoji, options),
+                          alt: segment.emoji,
+                          width: '72',
+                          height: '72',
+                          loading: 'lazy',
+                          decoding: 'async',
+                          draggable: 'false',
+                          'data-emoji': segment.emoji,
+                        },
+                        children: [],
+                      },
+                    ],
+                  }
           )
 
           const result: Content = {

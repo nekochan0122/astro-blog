@@ -46,7 +46,10 @@ export default function Collapse({ header, children: content }: CollapseProps) {
           height='1em'
           width='1em'
         >
-          <polygon class='fill-black dark:fill-white' points='5,30.9 8.1,34 24,18.1 39.9,34 43,30.9 24,12' />
+          <polygon
+            class='fill-black dark:fill-white'
+            points='5,30.9 8.1,34 24,18.1 39.9,34 43,30.9 24,12'
+          />
         </svg>
       </button>
       <div

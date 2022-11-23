@@ -17,7 +17,8 @@ const remarkToc: Plugin = (options: Options = { tight: true }) => {
       })
     )
 
-    if (result.endIndex === null || result.index === null || result.index === -1 || !result.map) return
+    if (result.endIndex === null || result.index === null || result.index === -1 || !result.map)
+      return
 
     node.children = [
       {
