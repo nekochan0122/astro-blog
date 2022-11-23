@@ -22,10 +22,6 @@ import rehypeTwemoji from './src/plugins/rehype-twemoji'
 import rehypePrettyCode from 'rehype-pretty-code'
 import type { Options as PrettyCodeOptions } from 'rehype-pretty-code'
 import type { Options as M2dxOptions } from 'astro-m2dx'
-import type { RemarkTocOptions } from './src/plugins/remark-toc'
-import type { MdxOptions } from '@astrojs/mdx'
-import type { IntegrationOptions } from '@astrojs/image'
-import type { Options as CompressOptions } from 'astro-compress/dist/options'
 
 // https://astro-m2dx.netlify.app/
 const remarM2dxOptions: M2dxOptions = {
@@ -35,10 +31,6 @@ const remarM2dxOptions: M2dxOptions = {
   rawmdx: true,
   relativeImages: true,
   unwrapImages: true,
-}
-
-const remarkTocOptions: RemarkTocOptions = {
-  tight: true,
 }
 
 const prettyCodeOptions: PrettyCodeOptions = {
@@ -60,32 +52,6 @@ const prettyCodeOptions: PrettyCodeOptions = {
   },
 }
 
-const mdxOptions: MdxOptions = {
-  remarkPlugins: [
-    remarkMath,
-    remarkBreaks,
-    [remarkBehead, { minDepth: 2 }],
-    remarkImages,
-    [remarkM2dx, remarM2dxOptions],
-    [remarkToc, remarkTocOptions],
-    remarkRouteSlug,
-    remarkReadingTime,
-    remarkDebug,
-  ],
-  rehypePlugins: [rehypeKatex, rehypeTwemoji, [rehypePrettyCode, prettyCodeOptions]],
-  extendPlugins: 'astroDefaults', // remark-gfm, remark-smartypants
-}
-
-const imageOptions: IntegrationOptions = {
-  serviceEntryPoint: '@astrojs/image/sharp',
-}
-
-const compressOptions: CompressOptions = {
-  img: {
-    webp: false,
-  },
-}
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://neko-astro-blog.vercel.app',
@@ -98,8 +64,28 @@ export default defineConfig({
     robotsTxt(),
     tailwind(),
     solidJs(),
-    mdx(mdxOptions),
-    image(imageOptions),
-    compress(compressOptions),
+    mdx({
+      remarkPlugins: [
+        remarkMath,
+        remarkBreaks,
+        [remarkBehead, { minDepth: 2 }],
+        remarkImages,
+        [remarkM2dx, remarM2dxOptions],
+        remarkToc,
+        remarkRouteSlug,
+        remarkReadingTime,
+        remarkDebug,
+      ],
+      rehypePlugins: [rehypeKatex, rehypeTwemoji, [rehypePrettyCode, prettyCodeOptions]],
+      extendPlugins: 'astroDefaults', // remark-gfm, remark-smartypants
+    }),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
+    compress({
+      img: {
+        webp: false,
+      },
+    }),
   ],
 })

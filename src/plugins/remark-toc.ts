@@ -8,7 +8,7 @@ export type RemarkTocOptions = Options
 
 const hash = shortHash(resolve(process.cwd(), 'src/_autoimports.ts'))
 
-const remarkToc: Plugin = (options: Options = {}) => {
+const remarkToc: Plugin = (options: Options = { tight: true }) => {
   return (node: any) => {
     const result = toc(
       node,
