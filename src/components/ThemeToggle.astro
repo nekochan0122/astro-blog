@@ -1,6 +1,28 @@
 ---
 ---
 
+<script>
+  const toggleTheme = document.querySelector<HTMLButtonElement>('#toggle-theme')
+
+  const handleClick = () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+
+    document.documentElement.setAttribute('style', `color-scheme: ${theme};`)
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+
+    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')
+    if (iframe?.contentWindow) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: theme } } },
+        'https://giscus.app'
+      )
+    }
+  }
+
+  toggleTheme?.addEventListener('click', handleClick)
+</script>
+
 <button
   id='toggle-theme'
   type='button'
@@ -30,24 +52,3 @@
     ></path>
   </svg>
 </button>
-<script>
-  const toggleTheme = document.querySelector<HTMLButtonElement>('#toggle-theme')
-  if (!toggleTheme) throw new Error('Toggle theme button not found')
-
-  const handleClick = () => {
-    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-
-    document.documentElement.setAttribute('style', `color-scheme: ${theme};`)
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-
-    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')
-    if (!iframe?.contentWindow) return
-    iframe.contentWindow.postMessage(
-      { giscus: { setConfig: { theme: theme } } },
-      'https://giscus.app'
-    )
-  }
-
-  toggleTheme.addEventListener('click', handleClick)
-</script>
