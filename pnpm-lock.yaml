@@ -7,7 +7,7 @@ specifiers:
   '@astrojs/rss': ^1.0.3
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/solid-js': ^1.2.3
-  '@astrojs/tailwind': ^2.1.2
+  '@astrojs/tailwind': ^2.1.3
   '@fontsource/fira-code': ^4.5.12
   '@fontsource/inter': ^4.5.14
   '@tailwindcss/line-clamp': ^0.4.2
@@ -16,7 +16,7 @@ specifiers:
   '@types/is-url': ^1.2.30
   '@types/mdast': ^3.0.10
   '@types/probe-image-size': ^7.2.0
-  astro: ^1.6.10
+  astro: ^1.6.11
   astro-compress: ^1.1.10
   astro-m2dx: 0.7.11
   astro-robots-txt: ^0.3.10
@@ -36,7 +36,7 @@ specifiers:
   probe-image-size: ^7.2.3
   reading-time: ^1.5.0
   rehype-katex: ^6.0.2
-  rehype-pretty-code: ^0.5.0
+  rehype-pretty-code: ^0.5.1
   rehype-twemojify: ^3.1.0
   remark-behead: ^3.1.0
   remark-breaks: ^3.0.2
@@ -61,12 +61,12 @@ dependencies:
   '@astrojs/rss': 1.0.3
   '@astrojs/sitemap': 1.0.0
   '@astrojs/solid-js': 1.2.3_solid-js@1.6.2
-  '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
+  '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
   '@fontsource/fira-code': 4.5.12
   '@fontsource/inter': 4.5.14
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
-  astro: 1.6.10
+  astro: 1.6.11
   astro-compress: 1.1.10
   astro-m2dx: 0.7.11
   astro-robots-txt: 0.3.10
@@ -81,7 +81,7 @@ dependencies:
   probe-image-size: 7.2.3
   reading-time: 1.5.0
   rehype-katex: 6.0.2
-  rehype-pretty-code: 0.5.0_shiki@0.11.1
+  rehype-pretty-code: 0.5.1_shiki@0.11.1
   rehype-twemojify: 3.1.0
   remark-behead: 3.1.0
   remark-breaks: 3.0.2
@@ -275,8 +275,8 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/tailwind/2.1.2_tailwindcss@3.2.4:
-    resolution: {integrity: sha512-nIrlT+WWp/Wv2VQ29Nvncq608E+j3qB9k1f7yiAjY2ijxizZo4OnQzdRPQcIjIZHL5YxPtzbcoSP2u3v+Domqw==}
+  /@astrojs/tailwind/2.1.3_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-W7UUUBJ3itDGcvJPvk+M/eNKFlLBYGODIzPsJ3zuehNzcJDhv/Ues+TzrpSvd0FaKfmV9Zlq3ZtToy96xxJU6Q==}
     peerDependencies:
       tailwindcss: ^3.0.24
     dependencies:
@@ -290,7 +290,7 @@ packages:
     resolution: {integrity: sha512-SJVfZHp00f8VZsT1fsx1+6acJGUNt/84xZytV5znPzzNE8RXjlE0rv03llgTsEeUHYZc6uJah91jNojS7RldFg==}
     engines: {node: ^14.18.0 || >=16.12.0}
     dependencies:
-      ci-info: 3.6.2
+      ci-info: 3.7.0
       debug: 4.3.4
       dlv: 1.1.3
       dset: 3.1.2
@@ -1104,8 +1104,8 @@ packages:
       zod: 3.19.1
     dev: false
 
-  /astro/1.6.10:
-    resolution: {integrity: sha512-W/ZGROkCKsDicpiXB82n8EkY6I0/12wdXS80NGaBdIUR1jZZxdN+0YMmdz+C2kYbjlo45KUsXpC/Tej+5KQYSQ==}
+  /astro/1.6.11:
+    resolution: {integrity: sha512-T0xb0U0FOrqXxl87x4mjpufhf0b47RMPIu8WWK+2ODrRZkPj1sr24alh3Y/PLSyiWSqoGZF7xzQ6hzt0jDCyVQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1126,7 +1126,7 @@ packages:
       '@types/html-escaper': 3.0.0
       '@types/yargs-parser': 21.0.0
       boxen: 6.2.1
-      ci-info: 3.6.2
+      ci-info: 3.7.0
       common-ancestor-path: 1.0.1
       cookie: 0.5.0
       debug: 4.3.4
@@ -1441,8 +1441,8 @@ packages:
   /chownr/1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
 
-  /ci-info/3.6.2:
-    resolution: {integrity: sha512-lVZdhvbEudris15CLytp2u6Y0p5EKfztae9Fqa189MfNmln9F33XuH69v5fvNfiRN5/0eAUz2yJL3mo+nhaRKg==}
+  /ci-info/3.7.0:
+    resolution: {integrity: sha512-2CpRNYmImPx+RXKLq6jko/L07phmS9I02TyqkcNU20GCF/GgaWvc58hPtjxDX8lPpkdwc9sNh72V9k00S7ezog==}
     engines: {node: '>=8'}
     dev: false
 
@@ -2464,8 +2464,8 @@ packages:
       pkg-dir: 4.2.0
     dev: false
 
-  /form-data-encoder/2.1.3:
-    resolution: {integrity: sha512-KqU0nnPMgIJcCOFTNJFEA8epcseEaoox4XZffTgy8jlI6pL/5EFyR54NRG7CnCJN0biY7q52DO3MH6/sJ/TKlQ==}
+  /form-data-encoder/2.1.4:
+    resolution: {integrity: sha512-yDYSgNMraqvnxiEXO4hi88+YZxaHC6QKzb5N84iRCTDeRO7ZALpir/lVmf/uXUhnwUr2O4HU8s/n6x+yNjQkHw==}
     engines: {node: '>= 14.17'}
     dev: false
 
@@ -2588,7 +2588,7 @@ packages:
       cacheable-lookup: 7.0.0
       cacheable-request: 10.2.3
       decompress-response: 6.0.0
-      form-data-encoder: 2.1.3
+      form-data-encoder: 2.1.4
       get-stream: 6.0.1
       http2-wrapper: 2.2.0
       lowercase-keys: 3.0.0
@@ -4428,8 +4428,8 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /rehype-pretty-code/0.5.0_shiki@0.11.1:
-    resolution: {integrity: sha512-R7tmHL0u312VZh1Pg7QQBjf6SJPblEixH9NidiitQo0VU3f0oxhtWSmFJdHqHhyAPB8NI+Bx1UKJgyReBVfG7A==}
+  /rehype-pretty-code/0.5.1_shiki@0.11.1:
+    resolution: {integrity: sha512-v8kVq8eMAm0L1O7H2MH/79CO02tBVE60Bv6pPXiYsSE7YRn8o04sEG7nPj3Xg8pHYRGQsiczX3Pb63JuJtVKDg==}
     engines: {node: ^12.16.0 || >=13.2.0}
     peerDependencies:
       shiki: '*'
