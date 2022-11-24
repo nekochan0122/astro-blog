@@ -15,6 +15,7 @@ import remarkImages from './src/plugins/remark-images'
 import remarkM2dx from 'astro-m2dx'
 import remarkToc from './src/plugins/remark-toc'
 import remarkRouteSlug from './src/plugins/remark-route-slug'
+import remarkTags from './src/plugins/remark-tags'
 import remarkReadingTime from './src/plugins/remark-reading-time'
 import remarkDebug from './src/plugins/remark-debug'
 import rehypeKatex from 'rehype-katex'
@@ -73,6 +74,7 @@ export default defineConfig({
         [remarkM2dx, remarM2dxOptions],
         remarkToc,
         remarkRouteSlug,
+        remarkTags,
         remarkReadingTime,
         remarkDebug,
       ],

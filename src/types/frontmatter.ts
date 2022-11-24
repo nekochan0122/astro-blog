@@ -3,7 +3,7 @@ export interface Frontmatter {
   description: string
   publishedAt: string
   updatedAt?: string
-  tags?: string[]
+  tags: string[]
   slug: string
   minutesRead: string
   draft?: boolean
