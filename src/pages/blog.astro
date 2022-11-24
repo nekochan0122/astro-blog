@@ -8,9 +8,11 @@ const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
 ---
 
 <BaseLayout title={'Blog - NekoChan'} description='NekoChan - Full Stack Web Developer'>
-  <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Blog</h2>
-  <p class='mb-4 text-gray-600 dark:text-gray-300'>
-    I write about web development, programming, and other stuff that I find interesting.
-  </p>
+  <div class='mb-16'>
+    <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Blog</h2>
+    <p class='text-gray-600 dark:text-gray-300'>
+      I write about web development, programming, and other stuff that I find interesting.
+    </p>
+  </div>
   {nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)}
 </BaseLayout>
