@@ -6,7 +6,13 @@ import avatar from '@/assets/81856932_p0_400x400.jpg'
 import type { Frontmatter } from '@/types'
 
 const posts = await Astro.glob<Frontmatter>('./blog/*.mdx')
-const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
+const nonDraftPosts = posts
+  .filter(({ frontmatter }) => !frontmatter.draft)
+  .sort((a, b) => {
+    const aDate = new Date(a.frontmatter.publishedAt)
+    const bDate = new Date(b.frontmatter.publishedAt)
+    return bDate.getTime() - aDate.getTime()
+  })
 ---
 
 <BaseLayout title={'NekoChan’s Blog'} description='NekoChan - Full Stack Web Developer'>
@@ -30,5 +36,11 @@ const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
       />
     </div>
   </div>
-  {nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)}
+  {
+    nonDraftPosts.length ? (
+      nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
+    ) : (
+      <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
+    )
+  }
 </BaseLayout>
