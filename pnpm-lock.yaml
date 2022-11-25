@@ -17,7 +17,7 @@ specifiers:
   '@types/mdast': ^3.0.10
   '@types/probe-image-size': ^7.2.0
   astro: ^1.6.11
-  astro-compress: ^1.1.10
+  astro-compress: ^1.1.11
   astro-m2dx: 0.7.11
   astro-robots-txt: ^0.3.10
   autoprefixer: ^10.4.13
@@ -67,7 +67,7 @@ dependencies:
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   astro: 1.6.11
-  astro-compress: 1.1.10
+  astro-compress: 1.1.11
   astro-m2dx: 0.7.11
   astro-robots-txt: 0.3.10
   autoprefixer: 10.4.13
@@ -157,7 +157,7 @@ packages:
       prettier-plugin-astro: 0.7.0
       source-map: 0.7.4
       vscode-css-languageservice: 6.2.1
-      vscode-html-languageservice: 5.0.2
+      vscode-html-languageservice: 5.0.3
       vscode-languageserver: 8.0.2
       vscode-languageserver-protocol: 3.17.2
       vscode-languageserver-textdocument: 1.0.7
@@ -691,8 +691,8 @@ packages:
       - supports-color
     dev: false
 
-  /@nikolarhristov/pipeline/0.0.2:
-    resolution: {integrity: sha512-E4CxzjaKT1bd3aclF1ieR4QW0wyl1n6ZXSZ5TYx7JEtAJehj8ygThluXPnYcBAXMThZmKK535yB8f59YszoSzQ==}
+  /@nikolarhristov/pipeline/0.0.6:
+    resolution: {integrity: sha512-OQTD2pbG3KXy1S3DsXyj8HALfL/Zn+k/+iVnIPUiS7emjrPkc+rO7XzWD2FDWuK3sI97qPXE8yfxJmXn6tp37w==}
     dependencies:
       critters: 0.0.16
       csso: 5.0.5
@@ -701,7 +701,7 @@ packages:
       html-minifier-terser: 7.1.0
       sharp: 0.31.2
       svgo: 3.0.2
-      terser: 5.15.1
+      terser: 5.16.0
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -1074,10 +1074,10 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-compress/1.1.10:
-    resolution: {integrity: sha512-1RNkXToF7t9qWoWStb17F1IHWa7GOopONM96hkdP5tJfMR0z4ZMl/zld9Uu4Xsc76PbEhsyDmUjkfg+Z2TqyJA==}
+  /astro-compress/1.1.11:
+    resolution: {integrity: sha512-jeG/lgxJLh1AUu0A7qzWXDweZEAhpsWth/a2wvFy1aIw6euLlBU4FP+N+adsLG8PaN2YiWaeCcGonPwM4Cksjg==}
     dependencies:
-      '@nikolarhristov/pipeline': 0.0.2
+      '@nikolarhristov/pipeline': 0.0.6
     dev: false
 
   /astro-m2dx/0.7.11:
@@ -2804,7 +2804,7 @@ packages:
       entities: 4.4.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.15.1
+      terser: 5.16.0
     dev: false
 
   /html-void-elements/2.0.1:
@@ -4775,7 +4775,7 @@ packages:
     resolution: {integrity: sha512-EugY9VASFuDqOexOgXR18ZV+TbFrQHeCpEYaXamO+SZlsnT/2LxuLBX25GGtIrwaEVFXUAbUQ601SWE2rMwWHA==}
     dependencies:
       jsonc-parser: 3.2.0
-      vscode-oniguruma: 1.6.2
+      vscode-oniguruma: 1.7.0
       vscode-textmate: 6.0.0
     dev: false
 
@@ -5067,8 +5067,8 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.0
 
-  /terser/5.15.1:
-    resolution: {integrity: sha512-K1faMUvpm/FBxjBXud0LWVAGxmvoPbZbfTCYbSgaaYQaIXI3/TdI7a7ZGA73Zrou6Q8Zmz3oeUTsp/dj+ag2Xw==}
+  /terser/5.16.0:
+    resolution: {integrity: sha512-KjTV81QKStSfwbNiwlBXfcgMcOloyuRdb62/iLFPGBcVNF4EXjhdYBhYHmbJpiBrVxZhDvltE11j+LBQUxEEJg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -5463,12 +5463,12 @@ packages:
       vscode-uri: 3.0.6
     dev: false
 
-  /vscode-html-languageservice/5.0.2:
-    resolution: {integrity: sha512-TQmeyE14Ure/w/S+RV2IItuRWmw/i1QaS+om6t70iHCpamuTTWnACQPMSltVGm/DlbdyMquUePJREjd/h3AVkQ==}
+  /vscode-html-languageservice/5.0.3:
+    resolution: {integrity: sha512-6rfrtcHhXDMXmC5pR2WXrx02HiNCzQDynOBMn+53zLxr2hvZrDzoc0QgC0FaFGfcglf7GeOsfhkWvJBFC/a70g==}
     dependencies:
+      '@vscode/l10n': 0.0.10
       vscode-languageserver-textdocument: 1.0.7
       vscode-languageserver-types: 3.17.2
-      vscode-nls: 5.2.0
       vscode-uri: 3.0.6
     dev: false
 
@@ -5503,8 +5503,8 @@ packages:
     resolution: {integrity: sha512-RAaHx7B14ZU04EU31pT+rKz2/zSl7xMsfIZuo8pd+KZO6PXtQmpevpq3vxvWNcrGbdmhM/rr5Uw5Mz+NBfhVng==}
     dev: false
 
-  /vscode-oniguruma/1.6.2:
-    resolution: {integrity: sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA==}
+  /vscode-oniguruma/1.7.0:
+    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
     dev: false
 
   /vscode-textmate/6.0.0:
