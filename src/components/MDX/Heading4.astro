@@ -5,7 +5,11 @@ interface Props extends astroHTML.JSX.HTMLAttributes {}
 ---
 
 <h4 class='group flex items-center sm:ml-[-24px] lg:ml-[-28px]' {...Astro.props}>
-  <a href={`#${Astro.props.id}`} class='group-hover:opacity-100 opacity-0 hidden sm:inline'>
+  <a
+    href={`#${Astro.props.id}`}
+    class='group-hover:opacity-100 opacity-0 hidden sm:inline'
+    aria-hidden='false'
+  >
     <Anchor className='mr-2 w-4 h-4 lg:w-5 lg:h-5' />
   </a>
   <slot />
