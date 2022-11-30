@@ -13,7 +13,7 @@
     "update": "pnpm up --latest"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.6",
+    "@astrojs/image": "^0.12.0",
     "@astrojs/mdx": "^0.11.6",
     "@astrojs/prefetch": "^0.1.1",
     "@astrojs/rss": "^1.0.3",
@@ -24,8 +24,8 @@
     "@fontsource/inter": "^4.5.14",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
-    "astro": "^1.6.11",
-    "astro-compress": "^1.1.11",
+    "astro": "^1.6.12",
+    "astro-compress": "^1.1.15",
     "astro-m2dx": "0.7.11",
     "astro-robots-txt": "^0.3.10",
     "autoprefixer": "^10.4.13",
