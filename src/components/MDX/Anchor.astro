@@ -14,10 +14,14 @@ const { href } = Astro.props
   {...Astro.props}
 >
   {
-    Astro.props['data-footnote-backref'] === undefined ? (
-      <slot />
-    ) : (
+    Astro.props['aria-describedby'] === 'footnote-label' ? (
+      <>
+        [<slot />]
+      </>
+    ) : Astro.props['aria-label'] === 'Back to content' ? (
       <FootnoteBackref className='h-6 w-6 inline-block -rotate-90' />
+    ) : (
+      <slot />
     )
   }
 </a>
