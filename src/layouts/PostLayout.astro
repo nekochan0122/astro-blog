@@ -13,7 +13,7 @@ import '@/styles/syntaxHighlight.css'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
-const { title, description, publishedAt, updatedAt, minutesRead } = Astro.props.frontmatter
+const { title, description, publishedAt, updatedAt, tags, minutesRead } = Astro.props.frontmatter
 
 dayjs.extend(relativeTime)
 ---
