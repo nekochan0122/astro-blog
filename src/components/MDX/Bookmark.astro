@@ -30,12 +30,18 @@ const { result } = (await ogs({ url: src })) as any
       <Image
         class={cx(
           'rounded-md',
-          result.twitterCard === 'summary_large_image' ? 'w-full h-auto mt-4' : 'w-16 h-16 sm:w-28 sm:h-28'
+          result.twitterCard === 'summary_large_image'
+            ? 'w-full h-auto mt-4'
+            : 'w-16 h-16 sm:w-28 sm:h-28'
         )}
         src={
           !result.ogImage.width
             ? result.ogImage.url
-            : { src: result.ogImage.url, width: result.ogImage.width, height: result.ogImage.height }
+            : {
+                src: result.ogImage.url,
+                width: result.ogImage.width,
+                height: result.ogImage.height,
+              }
         }
         alt={result.ogTitle}
       />
