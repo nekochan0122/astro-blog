@@ -6,7 +6,7 @@ interface Props {
 const { reactions = true } = Astro.props
 ---
 
-<div class='giscus-container mt-8'></div>
+<div id='giscus' class='mt-8'></div>
 <script is:inline define:vars={{ reactions }}>
   const giscusAttributes = {
     src: 'https://giscus.app/client.js',
@@ -29,7 +29,7 @@ const { reactions = true } = Astro.props
   const giscusScript = document.createElement('script')
   Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value))
 
-  const giscusContainer = document.querySelector('.giscus-container')
+  const giscusContainer = document.querySelector('#giscus')
   if (!giscusContainer) throw new Error('Giscus container not found !')
   giscusContainer.appendChild(giscusScript)
 </script>
