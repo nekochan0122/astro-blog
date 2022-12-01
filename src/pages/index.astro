@@ -3,7 +3,12 @@ import { Image } from '@astrojs/image/components'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
 import avatar from '@/assets/81856932_p0_400x400.jpg'
-import type { Frontmatter } from '@/types'
+import type { Frontmatter, SiteMetadata } from '@/types'
+
+const metadata: SiteMetadata = {
+  title: 'NekoChan’s Blog',
+  description: 'NekoChan - Full Stack Web Developer',
+}
 
 const posts = await Astro.glob<Frontmatter>('./blog/*.mdx')
 const nonDraftPosts = posts
@@ -15,7 +20,7 @@ const nonDraftPosts = posts
   })
 ---
 
-<BaseLayout title={'NekoChan’s Blog'} description='NekoChan - Full Stack Web Developer'>
+<BaseLayout {...metadata}>
   <div class='flex flex-col-reverse sm:flex-row sm:justify-between mb-16'>
     <div class='flex flex-col pr-8'>
       <h1 class='font-bold text-3xl md:text-5xl tracking-tight mb-1'>NekoChan</h1>

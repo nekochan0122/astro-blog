@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
 import type { MarkdownLayoutProps } from 'astro'
-import type { Frontmatter } from '@/types'
+import type { Frontmatter, SiteMetadata } from '@/types'
 
 interface Props {
   count: number
@@ -31,9 +31,14 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params
 const { count, posts } = Astro.props
+
+const metadata: SiteMetadata = {
+  title: `#${tag} - NekoChan`,
+  description: 'All the tags in this blog.',
+}
 ---
 
-<BaseLayout title={`#${tag} - NekoChan`} description={`All the posts that include ${tag}.`}>
+<BaseLayout {...metadata}>
   <div class='mb-10'>
     <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>#{tag} ( {count} )</h2>
   </div>

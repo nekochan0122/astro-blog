@@ -1,7 +1,12 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import TagCard from '@/components/TagCard.astro'
-import type { Frontmatter } from '@/types'
+import type { Frontmatter, SiteMetadata } from '@/types'
+
+const metadata: SiteMetadata = {
+  title: 'Tags - NekoChan',
+  description: 'All the tags in this blog.',
+}
 
 const posts = await Astro.glob<Frontmatter>('../blog/*.mdx')
 const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
@@ -12,7 +17,7 @@ const uniqueTags = [...new Set(tags)]
 const getCount = (tag: string) => tags.filter((t) => t === tag).length
 ---
 
-<BaseLayout title={'Tags - NekoChan'} description='All the tags in this blog.'>
+<BaseLayout {...metadata}>
   <div class='mb-10'>
     <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Tags</h2>
     <p class='text-gray-600 dark:text-gray-300'>All the tags in this blog.</p>

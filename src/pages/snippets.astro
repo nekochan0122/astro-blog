@@ -1,7 +1,12 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SnippetCard from '@/components/SnippetCard.astro'
-import type { Frontmatter } from '@/types'
+import type { Frontmatter, SiteMetadata } from '@/types'
+
+const metadata: SiteMetadata = {
+  title: 'Code Snippets – NekoChan',
+  description: 'A collection of code snippets.',
+}
 
 const snippets = await Astro.glob<Frontmatter>('./snippets/*.mdx')
 const nonDraftSnippets = snippets
@@ -13,7 +18,7 @@ const nonDraftSnippets = snippets
   })
 ---
 
-<BaseLayout title='Code Snippets – NekoChan' description='A collection of code snippets.'>
+<BaseLayout {...metadata}>
   <div class='mb-16'>
     <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Code Snippets</h2>
     <p class='text-gray-600 dark:text-gray-300'>A collection of code snippets.</p>
