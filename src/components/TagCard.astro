@@ -1,0 +1,15 @@
+---
+interface Props {
+  tag: string
+  count?: number
+}
+
+const { tag, count } = Astro.props
+---
+
+<a
+  href={`/tags/${tag}`}
+  class='px-2 py-1 rounded text-gray-600 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 dark:text-gray-300 dark:bg-gray-800 dark:hover:text-gray-200 dark:hover:bg-gray-700 transition-colors duration-300'
+>
+  #{tag}{count && ` (${count})`}
+</a>
