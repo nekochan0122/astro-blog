@@ -6,7 +6,6 @@ import Image from '@/components/MDX/Image.astro'
 import Anchor from '@/components/MDX/Anchor.astro'
 import ListItem from '@/components/MDX/ListItem.astro'
 import CodeBlock from '@/components/MDX/CodeBlock.astro'
-import FootnotesSection from '@/components/MDX/FootnotesSection.astro'
 
 export const components = {
   h2: Heading2,
@@ -16,5 +15,4 @@ export const components = {
   a: Anchor,
   li: ListItem,
   pre: CodeBlock,
-  section: FootnotesSection,
 }
