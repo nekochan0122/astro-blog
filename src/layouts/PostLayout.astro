@@ -83,8 +83,14 @@ dayjs.extend(relativeTime)
     <slot />
     <hr />
   </article>
-  <div class='flex flex-wrap gap-2'>
-    {tags.map((tag) => <TagCard tag={tag} />)}
-  </div>
+  <ol class='flex flex-wrap gap-2'>
+    {
+      tags.map((tag) => (
+        <li>
+          <TagCard tag={tag} />
+        </li>
+      ))
+    }
+  </ol>
   <Giscus />
 </BaseLayout>

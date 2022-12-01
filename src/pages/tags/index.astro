@@ -20,7 +20,13 @@ const getCount = (tag: string) => tags.filter((t) => t === tag).length
   <div class='flex flex-wrap gap-x-2 gap-y-2'>
     {
       uniqueTags.length ? (
-        uniqueTags.map((tag) => <TagCard tag={tag} count={getCount(tag)} />)
+        <ol>
+          {uniqueTags.map((tag) => (
+            <li>
+              <TagCard tag={tag} count={getCount(tag)} />
+            </li>
+          ))}
+        </ol>
       ) : (
         <p class='text-gray-600 dark:text-gray-300'>No tags yet.</p>
       )
