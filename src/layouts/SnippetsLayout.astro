@@ -3,15 +3,20 @@ import BaseLayout from './BaseLayout.astro'
 import Giscus from '@/components/Giscus.astro'
 import { cx } from '@/lib/utils'
 import type { MarkdownLayoutProps } from 'astro'
-import type { Frontmatter } from '@/types'
+import type { Frontmatter, SiteMetadata } from '@/types'
 import '@/styles/syntaxHighlight.css'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
 const { title, description } = Astro.props.frontmatter
+
+const metadata: SiteMetadata = {
+  title: `${title} – NekoChan`,
+  description,
+}
 ---
 
-<BaseLayout title={`${title} – NekoChan`} description={description}>
+<BaseLayout {...metadata}>
   <h1 class='mb-6 text-3xl font-bold tracking-tight md:text-5xl'>{title}</h1>
   <article
     class={cx(

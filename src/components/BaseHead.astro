@@ -4,13 +4,9 @@ import firacode from '@fontsource/fira-code/files/fira-code-latin-400-normal.wof
 import '@fontsource/inter'
 import '@fontsource/fira-code'
 import 'katex/dist/katex.min.css'
+import type { SiteMetadata } from '@/types'
 
-export interface BaseHeadProps {
-  title: string
-  description: string
-}
-
-const { title, description } = Astro.props as BaseHeadProps
+const { title, description } = Astro.props as SiteMetadata
 ---
 
 <meta charset='utf-8' />
