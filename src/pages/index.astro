@@ -36,11 +36,14 @@ const nonDraftPosts = posts
       />
     </div>
   </div>
-  {
-    nonDraftPosts.length ? (
-      nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
-    ) : (
-      <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
-    )
-  }
+  <div class='py-6 space-y-4'>
+    <h3 class='text-xl font-semibold'>Latest Posts</h3>
+    {
+      nonDraftPosts.length ? (
+        nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
+      ) : (
+        <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
+      )
+    }
+  </div>
 </BaseLayout>

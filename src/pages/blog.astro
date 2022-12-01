@@ -1,16 +1,29 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
+import type { MDXInstance } from 'astro'
 import type { Frontmatter } from '@/types'
 
 const posts = await Astro.glob<Frontmatter>('./blog/*.mdx')
-const nonDraftPosts = posts
+const nonDraftSortedPosts = posts
   .filter(({ frontmatter }) => !frontmatter.draft)
   .sort((a, b) => {
     const aDate = new Date(a.frontmatter.publishedAt)
     const bDate = new Date(b.frontmatter.publishedAt)
     return bDate.getTime() - aDate.getTime()
   })
+const postsByYear = nonDraftSortedPosts.reduce(
+  (acc: Record<number, MDXInstance<Frontmatter>[]>, post) => {
+    const year = new Date(post.frontmatter.publishedAt).getFullYear()
+    if (!acc[year]) {
+      acc[year] = []
+    }
+    acc[year].push(post)
+    return acc
+  },
+  {}
+)
+const sortedYears = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a))
 ---
 
 <BaseLayout title={'Blog - NekoChan'} description='NekoChan - Full Stack Web Developer'>
@@ -21,8 +34,21 @@ const nonDraftPosts = posts
     </p>
   </div>
   {
-    nonDraftPosts.length ? (
-      nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
+    nonDraftSortedPosts.length ? (
+      <>
+        {sortedYears.map((year) => (
+          <>
+            <h3 class='text-xl font-semibold'>{year}</h3>
+            <ol class='py-2 space-y-2'>
+              {postsByYear[+year].map(({ frontmatter }) => (
+                <li>
+                  <PostCard {...frontmatter} />
+                </li>
+              ))}
+            </ol>
+          </>
+        ))}
+      </>
     ) : (
       <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
     )
