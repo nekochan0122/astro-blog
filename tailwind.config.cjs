@@ -34,7 +34,7 @@ module.exports = {
               },
               code: { color: theme('colors.blue.400') },
             },
-            'h2,h3,h4': {
+            'h2,h3,h4,a[id],li[id]': {
               'scroll-margin-top': spacing[32],
             },
             thead: {
