@@ -11,7 +11,6 @@ import compress from 'astro-compress'
 import remarkMath from 'remark-math'
 import remarkBreaks from 'remark-breaks'
 import remarkBehead from 'remark-behead'
-import remarkImages from './src/plugins/remark-images'
 import remarkM2dx from 'astro-m2dx'
 import remarkToc from './src/plugins/remark-toc'
 import remarkRouteSlug from './src/plugins/remark-route-slug'
@@ -70,7 +69,6 @@ export default defineConfig({
         remarkMath,
         remarkBreaks,
         [remarkBehead, { minDepth: 2 }],
-        remarkImages,
         [remarkM2dx, remarM2dxOptions],
         remarkToc,
         remarkRouteSlug,
