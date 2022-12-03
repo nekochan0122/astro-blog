@@ -44,23 +44,31 @@ const unpinnedPosts = sortedPosts.filter(({ frontmatter }) => !frontmatter.pinne
   <div class='space-y-6'>
     {
       !!pinnedPosts.length && (
-        <div class='space-y-4'>
+        <>
           <h3 class='text-xl font-semibold'>Pinned</h3>
-          {pinnedPosts.map(({ frontmatter }) => (
-            <PostCard {...frontmatter} />
-          ))}
-        </div>
+          <ol class='space-y-4'>
+            {pinnedPosts.map(({ frontmatter }) => (
+              <li>
+                <PostCard {...frontmatter} />
+              </li>
+            ))}
+          </ol>
+        </>
       )
     }
-    <div class='space-y-4'>
-      <h3 class='text-xl font-semibold'>Latest Posts</h3>
-      {
-        nonDraftPosts.length ? (
-          unpinnedPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
-        ) : (
-          <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
-        )
-      }
-    </div>
+    <h3 class='text-xl font-semibold'>Latest Posts</h3>
+    {
+      nonDraftPosts.length ? (
+        <ol class='space-y-4'>
+          {unpinnedPosts.map(({ frontmatter }) => (
+            <li>
+              <PostCard {...frontmatter} />
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
+      )
+    }
   </div>
 </BaseLayout>
