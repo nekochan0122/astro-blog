@@ -1,5 +1,4 @@
 ---
-import dayjs from 'dayjs'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
 import type { MDXInstance } from 'astro'
@@ -12,24 +11,19 @@ const metadata: SiteMetadata = {
 }
 
 const posts = await Astro.glob<Frontmatter>('./blog/*.mdx')
-const nonDraftPosts = posts
-  .filter(({ frontmatter }) => !frontmatter.draft)
-  .sort((a, b) => {
-    const aDate = new Date(a.frontmatter.publishedAt)
-    const bDate = new Date(b.frontmatter.publishedAt)
-    return bDate.getTime() - aDate.getTime()
-  })
-const postsByYear = nonDraftPosts.reduce(
-  (acc: Record<number, MDXInstance<Frontmatter>[]>, post) => {
-    const year = new Date(post.frontmatter.publishedAt).getFullYear()
-    if (!acc[year]) {
-      acc[year] = []
-    }
-    acc[year].push(post)
-    return acc
-  },
-  {}
+const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
+const sortedPosts = nonDraftPosts.sort(
+  ({ frontmatter: { publishedAt: a } }, { frontmatter: { publishedAt: b } }) =>
+    new Date(b).valueOf() - new Date(a).valueOf()
 )
+const postsByYear = sortedPosts.reduce((acc: Record<number, MDXInstance<Frontmatter>[]>, post) => {
+  const year = new Date(post.frontmatter.publishedAt).getFullYear()
+  if (!acc[year]) {
+    acc[year] = []
+  }
+  acc[year].push(post)
+  return acc
+}, {})
 const sortedYears = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a))
 ---
 

@@ -9,13 +9,11 @@ const metadata: SiteMetadata = {
 }
 
 const snippets = await Astro.glob<Frontmatter>('./snippets/*.mdx')
-const nonDraftSnippets = snippets
-  .filter(({ frontmatter }) => !frontmatter.draft)
-  .sort((a, b) => {
-    const aDate = new Date(a.frontmatter.publishedAt)
-    const bDate = new Date(b.frontmatter.publishedAt)
-    return bDate.getTime() - aDate.getTime()
-  })
+const nonDraftSnippets = snippets.filter(({ frontmatter }) => !frontmatter.draft)
+const sortedSnippets = nonDraftSnippets.sort(
+  ({ frontmatter: { publishedAt: a } }, { frontmatter: { publishedAt: b } }) =>
+    new Date(b).valueOf() - new Date(a).valueOf()
+)
 ---
 
 <BaseLayout {...metadata}>
@@ -26,7 +24,7 @@ const nonDraftSnippets = snippets
   <div class='grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2'>
     {
       nonDraftSnippets.length ? (
-        nonDraftSnippets.map(({ frontmatter }) => <SnippetCard {...frontmatter} />)
+        sortedSnippets.map(({ frontmatter }) => <SnippetCard {...frontmatter} />)
       ) : (
         <p class='text-gray-600 dark:text-gray-300'>No snippets yet.</p>
       )

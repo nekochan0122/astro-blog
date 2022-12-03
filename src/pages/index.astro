@@ -11,15 +11,13 @@ const metadata: SiteMetadata = {
 }
 
 const posts = await Astro.glob<Frontmatter>('./blog/*.mdx')
-const nonDraftPosts = posts
-  .filter(({ frontmatter }) => !frontmatter.draft)
-  .sort((a, b) => {
-    const aDate = new Date(a.frontmatter.publishedAt)
-    const bDate = new Date(b.frontmatter.publishedAt)
-    return bDate.getTime() - aDate.getTime()
-  })
-const pinnedPosts = nonDraftPosts.filter(({ frontmatter }) => frontmatter.pinned)
-const unpinnedPosts = nonDraftPosts.filter(({ frontmatter }) => !frontmatter.pinned)
+const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
+const sortedPosts = nonDraftPosts.sort(
+  ({ frontmatter: { publishedAt: a } }, { frontmatter: { publishedAt: b } }) =>
+    new Date(b).valueOf() - new Date(a).valueOf()
+)
+const pinnedPosts = sortedPosts.filter(({ frontmatter }) => frontmatter.pinned)
+const unpinnedPosts = sortedPosts.filter(({ frontmatter }) => !frontmatter.pinned)
 ---
 
 <BaseLayout {...metadata}>
