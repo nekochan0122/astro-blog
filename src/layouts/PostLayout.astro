@@ -13,7 +13,15 @@ import '@/styles/syntaxHighlight.css'
 
 interface Props extends MarkdownLayoutProps<Frontmatter> {}
 
-const { title, description, publishedAt, updatedAt, tags, minutesRead } = Astro.props.frontmatter
+const {
+  title,
+  description,
+  publishedAt,
+  updatedAt,
+  tags,
+  comments = true,
+  minutesRead,
+} = Astro.props.frontmatter
 
 const metadata: SiteMetadata = {
   title: `${title} – NekoChan`,
@@ -92,5 +100,5 @@ dayjs.extend(relativeTime)
       ))
     }
   </ol>
-  <Giscus />
+  {comments && <Giscus />}
 </BaseLayout>
