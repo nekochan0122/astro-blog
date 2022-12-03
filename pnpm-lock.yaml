@@ -18,7 +18,7 @@ specifiers:
   '@types/probe-image-size': ^7.2.0
   astro: ^1.6.12
   astro-compress: ^1.1.15
-  astro-m2dx: 0.7.11
+  astro-m2dx: 0.7.15
   astro-robots-txt: ^0.3.10
   autoprefixer: ^10.4.13
   class-variance-authority: ^0.3.0
@@ -68,7 +68,7 @@ dependencies:
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   astro: 1.6.12
   astro-compress: 1.1.15
-  astro-m2dx: 0.7.11
+  astro-m2dx: 0.7.15
   astro-robots-txt: 0.3.10
   autoprefixer: 10.4.13
   class-variance-authority: 0.3.0
@@ -1102,14 +1102,14 @@ packages:
       '@nikolarhristov/pipeline': 0.0.10
     dev: false
 
-  /astro-m2dx/0.7.11:
-    resolution: {integrity: sha512-wLyus4Ad+T0GVqyDlOGF9PAXGB8aGypmog8DS/d0axBYM9zeIX/7miZNIxOO+QTg88ynwpFpt7mh4GbzZXf0/Q==}
+  /astro-m2dx/0.7.15:
+    resolution: {integrity: sha512-/fWKddNecAeskqw0B+nhouo57R+kQH0CnCrNUkvIj5iJNPV+92V95cKlLxYuEty6ZlxrYkWFHnetztgO1w3cgA==}
     dependencies:
       acorn: 8.8.1
       estree-util-visit: 1.2.0
       gray-matter: 4.0.3
       js-yaml: 4.1.0
-      m2dx-utils: 0.2.3
+      m2dx-utils: 0.2.5
       mdast-util-mdx: 2.0.0
       remark: 14.0.2
       remark-directive: 2.0.1
@@ -3201,8 +3201,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /m2dx-utils/0.2.3:
-    resolution: {integrity: sha512-wEIPaHW9hnhPx1QvZJBPIjZkmq1YCTxKmi8MhlBWxrw8PpAT7C9hXqLyCosZDjgnt5gNuH1JsDE07b4R/t1lGA==}
+  /m2dx-utils/0.2.5:
+    resolution: {integrity: sha512-aiZq8I8scoUVLhZ6NjJ5I7pi6rTwIRT3btZBAXcKBvhaJgDa60t7/FHU0WJdcqP5ZZY+HB5BJE7MPR9TLx36Ng==}
     dependencies:
       acorn: 8.8.1
       estree-util-visit: 1.2.0
