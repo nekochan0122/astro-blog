@@ -20,6 +20,7 @@ const {
   updatedAt,
   tags,
   comments = true,
+  slug,
   minutesRead,
 } = Astro.props.frontmatter
 
@@ -28,6 +29,17 @@ const metadata: SiteMetadata = {
   description,
   publishedAt,
 }
+
+const posts = await Astro.glob<Frontmatter>('../pages/blog/*.mdx')
+const nonDraftPosts = posts.filter(({ frontmatter }) => !frontmatter.draft)
+const sortedPosts = nonDraftPosts.sort(
+  ({ frontmatter: { publishedAt: a } }, { frontmatter: { publishedAt: b } }) =>
+    new Date(b).valueOf() - new Date(a).valueOf()
+)
+
+const currentPostIndex = sortedPosts.findIndex(({ frontmatter }) => frontmatter.slug === slug)
+const prevPost = sortedPosts[currentPostIndex + 1]
+const nextPost = sortedPosts[currentPostIndex - 1]
 
 dayjs.extend(relativeTime)
 ---
@@ -101,5 +113,35 @@ dayjs.extend(relativeTime)
       ))
     }
   </ol>
+  <div class='flex flex-col lg:flex-row gap-2 w-full mt-10'>
+    {
+      prevPost && (
+        <a
+          href={`/blog/${prevPost.frontmatter.slug}`}
+          class={cx(
+            'grow flex flex-col p-3 sm:p-4 border border-grey-200 dark:border-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300',
+            nextPost ? 'lg:w-1/2' : 'lg:w-full'
+          )}
+        >
+          <p class='text-gray-600 dark:text-gray-300'>Previous post</p>
+          <p class='text-black dark:text-white'>{prevPost.frontmatter.title}</p>
+        </a>
+      )
+    }
+    {
+      nextPost && (
+        <a
+          href={`/blog/${nextPost.frontmatter.slug}`}
+          class={cx(
+            'grow flex flex-col p-3 sm:p-4 border border-grey-200 dark:border-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300',
+            prevPost ? 'lg:w-1/2 lg:items-end' : 'lg:w-full'
+          )}
+        >
+          <p class='text-gray-600 dark:text-gray-300'>Next post</p>
+          <p class='text-black dark:text-white'>{nextPost.frontmatter.title}</p>
+        </a>
+      )
+    }
+  </div>
   {comments && <Giscus />}
 </BaseLayout>
