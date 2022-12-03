@@ -7,12 +7,12 @@ import type { SiteMetadata } from '@/types'
 interface Props extends SiteMetadata {}
 ---
 
-<html lang='en' class='scroll-smooth font-serif antialiased'>
+<html lang='en'>
   <head>
     <BaseHead {...Astro.props} />
   </head>
   <body
-    class='flex flex-col min-h-screen px-6 overflow-x-hidden [overflow:overlay] bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-[background-color] duration-300 selection:bg-[#67769660]'
+    class='flex flex-col min-h-screen px-6 overflow-x-hidden [overflow:overlay] font-serif antialiased bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-[background-color] duration-300 selection:bg-[#67769660]'
   >
     <Nav />
     <slot name='before-main' />
