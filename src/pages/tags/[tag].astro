@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'config'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
 import type { MarkdownLayoutProps } from 'astro'
@@ -33,8 +34,8 @@ const { tag } = Astro.params
 const { count, posts } = Astro.props
 
 const metadata: SiteMetadata = {
-  title: `#${tag} - NekoChan`,
-  description: 'All the tags in this blog.',
+  title: SEO.getTitle(`#${tag}`),
+  description: 'All posts with the tag.',
 }
 ---
 

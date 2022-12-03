@@ -1,3 +1,4 @@
+import { SEO } from './site.config'
 import { readFileSync } from 'fs'
 import { defineConfig } from 'astro/config'
 import prefetch from '@astrojs/prefetch'
@@ -54,7 +55,7 @@ const prettyCodeOptions: PrettyCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://neko-astro-blog.vercel.app',
+  site: SEO.site,
   markdown: {
     syntaxHighlight: false,
   },

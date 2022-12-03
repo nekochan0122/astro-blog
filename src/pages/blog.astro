@@ -1,11 +1,12 @@
 ---
+import { SEO } from 'config'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
 import type { MDXInstance } from 'astro'
 import type { Frontmatter, SiteMetadata } from '@/types'
 
 const metadata: SiteMetadata = {
-  title: 'Blog - NekoChan',
+  title: SEO.getTitle('Blog'),
   description:
     'I write about web development, programming, and other stuff that I find interesting.',
 }

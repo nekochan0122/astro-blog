@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'config'
 import inter from '@fontsource/inter/files/inter-latin-400-normal.woff2'
 import firacode from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2'
 import '@fontsource/inter'
@@ -21,20 +22,20 @@ const canonicalURL = new URL(Astro.url).href
 
 <meta name='title' content={title} />
 <meta name='description' content={description} />
-<meta name='author' content='NekoChan' />
+<meta name='author' content={SEO.author} />
 <meta name='robots' content='index, follow' />
 <meta name='generator' content={Astro.generator} />
 
-<meta property='og:site_name' content='NekoChan’s Blog' />
+<meta property='og:site_name' content={SEO.title} />
 <meta property='og:type' content='website' />
 <meta property='og:url' content={canonicalURL} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:locale' content='en_US' />
+<meta property='og:locale' content={SEO.locale} />
 
 <meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@neko_chan_0122' />
-<meta name='twitter:creator' content='@neko_chan_0122' />
+<meta name='twitter:site' content={SEO.twitter.site} />
+<meta name='twitter:creator' content={SEO.twitter.creator} />
 <meta property='twitter:url' content={canonicalURL} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />

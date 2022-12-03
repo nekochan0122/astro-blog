@@ -6,7 +6,8 @@
     "types": ["@astrojs/image/client"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "config": ["site.config.ts"]
     }
   }
 }

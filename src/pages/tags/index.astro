@@ -1,11 +1,12 @@
 ---
+import { SEO } from 'config'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import TagCard from '@/components/TagCard.astro'
 import type { Frontmatter, SiteMetadata } from '@/types'
 
 const metadata: SiteMetadata = {
-  title: 'Tags - NekoChan',
-  description: 'All the tags in this blog.',
+  title: SEO.getTitle('Tags'),
+  description: 'All tags of my blog posts.',
 }
 
 const posts = await Astro.glob<Frontmatter>('../blog/*.mdx')
@@ -20,7 +21,7 @@ const getCount = (tag: string) => tags.filter((t) => t === tag).length
 <BaseLayout {...metadata}>
   <div class='mb-10'>
     <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Tags</h2>
-    <p class='text-gray-600 dark:text-gray-300'>All the tags in this blog.</p>
+    <p class='text-gray-600 dark:text-gray-300'>All tags of my blog posts.</p>
   </div>
   {
     uniqueTags.length ? (

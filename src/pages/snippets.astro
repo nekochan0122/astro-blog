@@ -1,10 +1,11 @@
 ---
+import { SEO } from 'config'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SnippetCard from '@/components/SnippetCard.astro'
 import type { Frontmatter, SiteMetadata } from '@/types'
 
 const metadata: SiteMetadata = {
-  title: 'Code Snippets – NekoChan',
+  title: SEO.getTitle('Code Snippets'),
   description: 'A collection of code snippets.',
 }
 

@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'config'
 import { Image } from '@astrojs/image/components'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostCard from '@/components/PostCard.astro'
@@ -6,7 +7,7 @@ import avatar from '@/assets/81856932_p0_400x400.jpg'
 import type { Frontmatter, SiteMetadata } from '@/types'
 
 const metadata: SiteMetadata = {
-  title: 'NekoChan’s Blog',
+  title: SEO.title,
   description: 'NekoChan - Full Stack Web Developer',
 }
 

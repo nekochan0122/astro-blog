@@ -1,9 +1,10 @@
 ---
+import { SEO } from 'config'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import type { SiteMetadata } from '@/types'
 
 const metadata: SiteMetadata = {
-  title: '404 Not Found – NekoChan',
+  title: SEO.getTitle('404 Not Found'),
   description: 'Oops! It looks like this page is lost in space!',
 }
 ---

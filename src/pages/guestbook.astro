@@ -1,16 +1,17 @@
 ---
+import { SEO } from 'config'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import Giscus from '@/components/Giscus.astro'
 import type { SiteMetadata } from '@/types'
 
 const metadata: SiteMetadata = {
-  title: 'Guestbook – NekoChan',
-  description: 'Leave some comments here.',
+  title: SEO.getTitle('Guestbook'),
+  description: 'Leave a message for me.',
 }
 ---
 
 <BaseLayout {...metadata}>
   <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>Guestbook</h2>
-  <p class='mb-4 text-gray-600 dark:text-gray-300'>Leave a comment below.</p>
+  <p class='mb-4 text-gray-600 dark:text-gray-300'>Leave a message for me.</p>
   <Giscus reactions={false} />
 </BaseLayout>
