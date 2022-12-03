@@ -42,5 +42,13 @@ const metadata: SiteMetadata = {
   <div class='mb-10'>
     <h2 class='mb-4 text-3xl font-bold tracking-tight md:text-5xl'>#{tag} ( {count} )</h2>
   </div>
-  {posts.map(({ frontmatter }) => <PostCard {...frontmatter} />)}
+  <ol class='space-y-4'>
+    {
+      posts.map(({ frontmatter }) => (
+        <li>
+          <PostCard {...frontmatter} />
+        </li>
+      ))
+    }
+  </ol>
 </BaseLayout>
