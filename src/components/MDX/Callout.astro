@@ -4,9 +4,11 @@ import Info from './icons/Info.astro'
 import Success from './icons/Success.astro'
 import Warning from './icons/Warning.astro'
 import Error from './icons/Error.astro'
+import Twemoji from './Twemoji.astro'
 
 interface Props extends VariantProps<typeof containerStyles> {
   header: string
+  emoji?: string
 }
 
 const containerStyles = cva('flex flex-col rounded-md border-2 p-3 sm:p-4 my-8', {
@@ -23,7 +25,7 @@ const containerStyles = cva('flex flex-col rounded-md border-2 p-3 sm:p-4 my-8',
   },
 })
 
-const { type = 'info', header = type?.toUpperCase() } = Astro.props
+const { type = 'info', header = type?.toUpperCase(), emoji } = Astro.props
 
 if (!type) return
 
@@ -38,7 +40,7 @@ const Icon = {
 <div class={containerStyles({ type })}>
   <div class='flex items-center'>
     <i class='shrink-0'>
-      <Icon className='w-6 h-6' />
+      {emoji ? <Twemoji emoji={emoji} /> : <Icon className='w-6 h-6' />}
     </i>
     <div class='ml-2 sm:ml-3 font-bold'>{header}</div>
   </div>
