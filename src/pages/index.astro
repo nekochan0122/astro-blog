@@ -18,6 +18,8 @@ const nonDraftPosts = posts
     const bDate = new Date(b.frontmatter.publishedAt)
     return bDate.getTime() - aDate.getTime()
   })
+const pinnedPosts = nonDraftPosts.filter(({ frontmatter }) => frontmatter.pinned)
+const unpinnedPosts = nonDraftPosts.filter(({ frontmatter }) => !frontmatter.pinned)
 ---
 
 <BaseLayout {...metadata}>
@@ -41,14 +43,26 @@ const nonDraftPosts = posts
       />
     </div>
   </div>
-  <div class='py-6 space-y-4'>
-    <h3 class='text-xl font-semibold'>Latest Posts</h3>
+  <div class='space-y-6'>
     {
-      nonDraftPosts.length ? (
-        nonDraftPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
-      ) : (
-        <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
+      !!pinnedPosts.length && (
+        <div class='space-y-4'>
+          <h3 class='text-xl font-semibold'>Pinned</h3>
+          {pinnedPosts.map(({ frontmatter }) => (
+            <PostCard {...frontmatter} />
+          ))}
+        </div>
       )
     }
+    <div class='space-y-4'>
+      <h3 class='text-xl font-semibold'>Latest Posts</h3>
+      {
+        nonDraftPosts.length ? (
+          unpinnedPosts.map(({ frontmatter }) => <PostCard {...frontmatter} />)
+        ) : (
+          <p class='text-gray-600 dark:text-gray-300'>No posts yet.</p>
+        )
+      }
+    </div>
   </div>
 </BaseLayout>
