@@ -29,7 +29,6 @@ import type { Options as M2dxOptions } from 'astro-m2dx'
 const remarM2dxOptions: M2dxOptions = {
   exportComponents: true,
   frontmatter: true,
-  rawmdx: true,
   relativeImages: true,
   unwrapImages: true,
 }
