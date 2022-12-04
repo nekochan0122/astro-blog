@@ -9,24 +9,24 @@ import solidJs from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
 import image from '@astrojs/image'
 import compress from 'astro-compress'
+import mdxProvider from './plugins/mdx-provider'
 import remarkMath from 'remark-math'
 import remarkBreaks from 'remark-breaks'
 import remarkBehead from 'remark-behead'
 import remarkM2dx from 'astro-m2dx'
-import remarkToc from './src/plugins/remark-toc'
-import remarkRouteSlug from './src/plugins/remark-route-slug'
-import remarkTags from './src/plugins/remark-tags'
-import remarkReadingTime from './src/plugins/remark-reading-time'
-import remarkDebug from './src/plugins/remark-debug'
+import remarkToc from './plugins/remark-toc'
+import remarkRouteSlug from './plugins/remark-route-slug'
+import remarkTags from './plugins/remark-tags'
+import remarkReadingTime from './plugins/remark-reading-time'
+import remarkDebug from './plugins/remark-debug'
 import rehypeKatex from 'rehype-katex'
-import rehypeTwemoji from './src/plugins/rehype-twemoji'
+import rehypeTwemoji from './plugins/rehype-twemoji'
 import rehypePrettyCode from 'rehype-pretty-code'
 import type { Options as PrettyCodeOptions } from 'rehype-pretty-code'
 import type { Options as M2dxOptions } from 'astro-m2dx'
 
 // https://astro-m2dx.netlify.app/
 const remarM2dxOptions: M2dxOptions = {
-  autoImports: true,
   exportComponents: true,
   frontmatter: true,
   rawmdx: true,
@@ -58,6 +58,9 @@ export default defineConfig({
   site: SEO.site,
   markdown: {
     syntaxHighlight: false,
+  },
+  vite: {
+    plugins: [mdxProvider()],
   },
   integrations: [
     prefetch(),
