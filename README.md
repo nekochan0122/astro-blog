@@ -76,7 +76,6 @@ astro-blog
 │  ├─ plugins
 │  ├─ styles
 │  ├─ types
-│  ├─ _autoimports.ts
 │  └─ _components.ts
 └─ package.json
 
