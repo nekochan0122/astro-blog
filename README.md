@@ -1,31 +1,44 @@
-## 🚀 Project Structure
+# Astro Blog
 
-Inside of your Astro project, you'll see the following folders and files:
+<p align="center">
+  <img src="./docs/lighthouse.webp" alt="lighthouse">
+  <br/><br/>
+  A Fast, Small & Powerful Blog Template For Developer.
+  <br/><br/>
+  Inspired by <a href="https://leerob.io/">leerob.io</a>
+  <br/><br/>
+  Demo <a href="https://neko-astro-blog.vercel.app/">neko-astro-blog.vercel.app/</a>
+</p>
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Features
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Fast & Small.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+  - Static site generation
+  - Auto-compress all static files
+  - Built with [Astro](https://astro.build/), [Solid.js](https://www.solidjs.com/) and [Tailwind CSS](https://tailwindcss.com/)
+  - Image optimized (local/remote images auto compress to `Webp` format) with lazy loading
+  - Partial hydration
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Powerful.
 
-## 🧞 Commands
+  - MDX support
+  - Syntax highlighting
+    - copy button
+    - line number
+    - line highlight
+    - dark mode
+  - Twemoji support
+  - Comments system
+  - SEO friendly
+  - RSS feed
 
-All commands are run from the root of the project, from a terminal:
+- Responsive.
 
-| Command                 | Action                                           |
-| :---------------------- | :----------------------------------------------- |
-| `pnpm install`          | Installs dependencies                            |
-| `pnpm run dev`          | Starts local dev server at `localhost:3000`      |
-| `pnpm run build`        | Build your production site to `./dist/`          |
-| `pnpm run preview`      | Preview your build locally, before deploying     |
-| `pnpm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `pnpm run astro --help` | Get help using the Astro CLI                     |
+  - Mobile-first.
+  - Dark mode.
+  - Customizable.
+
+## Getting Started
+
+🚧 The documentation is still in progress. 🚧
